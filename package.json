@@ -1,13 +1,17 @@
 {
     "version": "0.0.0",
     "name": "vite-react-playground",
+    "license": "MIT",
     "scripts": {
         "dev": "vite --port 20080",
         "build": "tsc && vite build",
-        "serve": "vite preview"
+        "watch": "tsc && vite build -- --watch",
+        "serve": "vite preview",
+        "prepare": "husky install"
     },
     "dependencies": {
-        "@vanilla-extract/css": "1.1.0",
+        "@vanilla-extract/css": "^1.10.0",
+        "@vanilla-extract/recipes": "^0.3.0",
         "@vanilla-extract/sprinkles": "0.4.3",
         "@vanilla-extract/vite-plugin": "1.0.0",
         "history": "5.0.0",
@@ -21,16 +25,17 @@
     "devDependencies": {
         "@types/react": "17.0.14",
         "@types/react-dom": "17.0.9",
-        "@typescript-eslint/eslint-plugin": "4.28.2",
-        "@typescript-eslint/parser": "4.28.2",
+        "@typescript-eslint/eslint-plugin": "^5.55.0",
+        "@typescript-eslint/parser": "^5.55.0",
         "@vitejs/plugin-react-refresh": "1.3.5",
-        "eslint": "7.30.0",
+        "eslint": "^8.36.0",
         "eslint-config-google": "0.14.0",
         "eslint-config-prettier": "8.3.0",
         "eslint-plugin-import": "2.23.4",
         "eslint-plugin-jsx-a11y": "6.4.1",
-        "eslint-plugin-react": "7.24.0",
+        "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-react-hooks": "4.2.0",
+        "husky": "^8.0.3",
         "lint-staged": "11.0.0",
         "prettier": "2.3.2",
         "sass": "1.35.2",

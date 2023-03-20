@@ -1,13 +1,16 @@
-import {globalStyle} from "@vanilla-extract/css";
+import { globalStyle } from '@vanilla-extract/css';
 
-globalStyle('html, body', {
-  margin: 0,
+globalStyle('html, body > #root', {
+  margin: '0 auto',
   fontFamily: `'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', sans-serif`,
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
-})
+  width: '76vw',
+});
 
 globalStyle('a', {
-  cursor: "pointer"
-})
+  color: 'blue',
+  cursor: 'pointer',
+  textDecoration: 'underline',
+});
