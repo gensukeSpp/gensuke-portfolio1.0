@@ -5,7 +5,6 @@
     "scripts": {
         "dev": "vite --port 20080",
         "build": "tsc && vite build",
-        "watch": "tsc && vite build && vite preview",
         "serve": "vite preview",
         "prepare": "husky install"
     },
