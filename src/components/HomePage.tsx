@@ -124,7 +124,7 @@ const Skill = () => {
             クラウド環境Google App Engineを使った開発を行いました。詳細は<a href="#"></a>作品２で
           </dd>
           <dd>
-            Github：<a href="https://github.com/gensukeSpp/petit-imgpost">ソースコード</a>
+            Github：<a href="https://github.com/gensukeSpp/gae-image-post/">ソースコード</a>
           </dd>
         </dl>
         <dl
