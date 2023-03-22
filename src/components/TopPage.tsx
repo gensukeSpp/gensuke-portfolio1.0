@@ -2,8 +2,8 @@ import { styles } from './TopPage.css';
 import { SharedLayout } from '~/components/layouts/SharedLayout';
 import { Head } from '~/components/layouts/common/Head';
 import { HomePage } from '~/components/HomePage';
-// import { Link } from 'rocon/react';
-// import { topLevelRoutes } from './Routes';
+import { Link } from 'rocon/react';
+import { topLevelRoutes } from './Routes';
 
 export const TopPage = () => {
   return (
@@ -24,6 +24,11 @@ export const TopPage = () => {
         </ul> */}
       </SharedLayout>
       <HomePage />
+      <ul>
+        <li>
+          <Link route={topLevelRoutes._.sunkit}>Sunkit</Link>
+        </li>
+      </ul>
     </>
   );
 };
