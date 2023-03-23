@@ -46,10 +46,6 @@
         "yarn": "^1.22.19"
     },
     "lint-staged": {
-        "*.{js,ts,tsx}": [
-            "prettier --write",
-            "eslint --fix"
-        ],
         "*.{css,scss}": [
             "prettier --write",
             "stylelint --allow-empty-input --fix"
