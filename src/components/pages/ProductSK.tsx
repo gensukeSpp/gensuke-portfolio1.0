@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Library, Product } from './portfolio_type';
+
 type Prop = {
   text: string;
 };
@@ -23,6 +25,32 @@ export const ProductPage = (prop: Prop) => {
   return (
     <div>
       <p>{prop.text}</p>
+      <dl>
+        {val.map((products: Product) => {
+          return (
+            <>
+              <dt>タイトル：{products.title}</dt>
+              <dd>{products.term}</dd>
+              <dd>{products?.description}</dd>
+              {/* {library?.map((library: Library) => {
+                return (
+                  <dd>
+                    ライブラリー：{library.name}
+                    <ul>
+                      <li>
+                        {library.action[0].summary}
+                      </li>
+                      <li>
+                        {library.action[0].description}
+                      </li>
+                    </ul>
+                  </dd>
+                );
+              })} */}
+            </>
+          );
+        })}
+      </dl>
     </div>
   );
 };
