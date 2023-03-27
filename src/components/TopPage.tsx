@@ -3,7 +3,7 @@ import { SharedLayout } from '~/components/layouts/SharedLayout';
 import { Head } from '~/components/layouts/common/Head';
 import { HomePage } from '~/components/HomePage';
 import { Link } from 'rocon/react';
-import { topLevelRoutes } from './Routes';
+import { productPageBuilder } from './Routes';
 
 export const TopPage = () => {
   return (
@@ -26,7 +26,10 @@ export const TopPage = () => {
       <HomePage />
       <ul>
         <li>
-          <Link route={topLevelRoutes._.sunkit}>Sunkit</Link>
+          <Link route={productPageBuilder.route} match={{"page": "0"}}>作品１</Link>
+        </li>
+        <li>
+          <Link route={productPageBuilder.route} match={{"page": "1"}}>作品２</Link>
         </li>
       </ul>
     </>

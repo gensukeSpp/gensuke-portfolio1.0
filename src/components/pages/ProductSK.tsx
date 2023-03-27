@@ -1,58 +1,74 @@
 import * as React from 'react';
 
-import { Framework, Library, Product } from './portfolio_type';
+import {  Product } from './portfolio_type';
 
+// https://www.choge-blog.com/programming/typescriptelement-implicitly-has-an-any-type-because-expression-of-type-string-cant-be-used-to-index-typeerrorsolution/
 type Prop = {
-  text: string;
-};
+  [pageNum: string]: number
+}
 
 const fetchData: Promise<Product[]> = fetch('http://my-json-server.typicode.com/gensukeSpp/sunkit-portfolio/products').then((res) =>
   res.json()
 );
 
-export const ProductPage = (prop: Prop) => {
-  const [val, setVal] = React.useState<Product[]>([]);
-  const [tools, setTools] = React.useState<Library[] | Framework[] | undefined>([]);
+export const ProductPage = (page: Prop) => {
+  const [products, setProducts] = React.useState<Product[]>([]);
 
   React.useEffect(() => {
     const f = async () => {
       const json = await fetchData;
-      setVal(json);
+      setProducts(json);
     };
     f();
   });
-  console.log(val);
+  console.log(products);
+
+  const key: keyof string = page.pageNum;
+  // const sitename = products[key];
 
   return (
     <div>
-      <p>{prop.text}</p>
-        {val.map((products: Product, i) => {
+      {/* <p>{prop.text}</p> */}
+        {/* {products.map((product: Product, i) => {
           return (
-          <div key={i}>{i}
+          <div key={i}>{i} */}
             <dl>
-              <dt>タイトル：{products.title}</dt>
-              <dd>{products.term}</dd>
-              <dd>{products?.description}</dd>
+              <dt>タイトル：{products[key].title}</dt>
+              <dd>{products[key].term}</dd>
+              <dd>{products[key]?.description}</dd>
               <dl>
-                <dt>{products.language[i].program}</dt>
-                <dd>
-                  {
-                    setTools(products.language[i].library);
-                    tools.map((library: Library, j) => {
-                    });
-                  }
-                </dd>
-                <dd>
-                  <ul>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </dd>
+                {products[key].language.map((lang, j) => {
+                  return (
+                  <div key={j}>{j}
+                  <dt>{lang.program}</dt>
+                  {console.log(lang)}
+                  <dd>
+                    {lang.library?.map((lib, k) => {
+                      return (
+                      <div key={k}>{k}
+                      <dd>{lib.name}</dd>
+                      <ul>
+                        {lib.action.map((act, l) => {
+                          return (
+                          <div key={l}>{l}
+                          <li>{act.summary}</li>
+                          <li>{act.description}</li>
+                          </div>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                      );
+                    })}
+                  </dd>
+                  </div>
+                  );
+                })}
               </dl>
             </dl>
           </div>
-          );
-        })}
-      </div>
+      //     );
+      //   })}
+      // </div>
   );
 }
