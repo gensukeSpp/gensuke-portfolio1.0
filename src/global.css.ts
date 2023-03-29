@@ -14,3 +14,8 @@ globalStyle('a', {
   cursor: 'pointer',
   textDecoration: 'underline',
 });
+
+globalStyle('li', {
+  // listStyleType: 'disc',
+  listStylePosition: 'inside' 
+});
