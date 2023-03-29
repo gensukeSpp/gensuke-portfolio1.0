@@ -4,31 +4,31 @@ export interface Product {
 	presentation?: string;
 	language: Language[];
 	link?: string;
-  }
+}
   
-  export interface Language {
+export interface Language {
 	program: string;
 	framework?: Framework[];
 	library?: Library[];
-  }
+}
   
-  export interface Framework {
+export interface Framework {
 	name: string;
 	description: string;
 	action: Action[];
-  }
+}
   
-  export interface Library {
+export interface Library {
 	name: string;
 	description?: string;
 	action: Action[];
-  }
+}
   
-  interface Action {
+interface Action {
 	summary: string;
 	explanation: string;
-	source?: string;
-  }
+	source: string;
+}
   
   // type Product = {
   //   title: string,

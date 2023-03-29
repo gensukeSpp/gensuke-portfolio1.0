@@ -17,6 +17,8 @@
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "react-helmet-async": "1.0.9",
+        "react-markdown": "^8.0.6",
+        "remark-gfm": "^3.0.1",
         "rocon": "1.2.2",
         "vite-react-jsx": "1.1.2",
         "vite-tsconfig-paths": "3.3.13"

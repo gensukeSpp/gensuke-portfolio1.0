@@ -1,4 +1,6 @@
 import * as React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 import { Product } from './portfolio_type';
 import { card, item, prog, mv } from './ProductPage.css';
@@ -22,7 +24,7 @@ export const ProductComponent = (page: Prop) => {
     };
     f();
   }, [products]);
-  // console.log(products);
+  console.log(products);
 
   const key: keyof string = page.pageNum;
   // console.log('sunkit?: ' + products[key]);
@@ -54,6 +56,7 @@ export const ProductComponent = (page: Prop) => {
                                     <div key={l}>
                                     <li className={mv.sum}>{act.summary}</li>
                                     <li className={mv.explain}>{act.explanation}</li>
+                                    <ReactMarkdown>{act.source}</ReactMarkdown>
                                     </div>
                                   );
                                 })}
@@ -74,6 +77,7 @@ export const ProductComponent = (page: Prop) => {
                                     <div key={n}>
                                     <li className={mv.sum}>{act.summary}</li>
                                     <li className={mv.explain}>{act.explanation}</li>
+                                    <li><ReactMarkdown children={act.source} remarkPlugins={[remarkGfm]}></ReactMarkdown></li>
                                     </div>
                                   );
                                 })}
