@@ -5,6 +5,8 @@ import remarkGfm from 'remark-gfm';
 import { Product } from './portfolio_type';
 import { card, item, prog, mv } from './ProductPage.css';
 
+import { callSource } from './SourceContents';
+
 // https://www.choge-blog.com/programming/typescriptelement-implicitly-has-an-any-type-because-expression-of-type-string-cant-be-used-to-index-typeerrorsolution/
 type Prop = {
   [pageNum: string]: number
@@ -16,6 +18,11 @@ const fetchData: Promise<Product[]> = fetch('http://my-json-server.typicode.com/
 
 export const ProductComponent = (page: Prop) => {
   const [products, setProducts] = React.useState<Product[]>([]);
+  const [md, setMd] = React.useState<string>("");
+
+  // const source1 =`Example:
+  //   ~~Hello Markdown~~
+  // `;
 
   React.useEffect(() => {
     const f = async () => {
@@ -23,11 +30,13 @@ export const ProductComponent = (page: Prop) => {
       setProducts(json);
     };
     f();
-  }, [products]);
-  console.log(products);
+  }, []);
+
+  // React.useEffect(() => {
+  //   setMd(source1);
+  // }, []);
 
   const key: keyof string = page.pageNum;
-  // console.log('sunkit?: ' + products[key]);
 
   return (
     <>
@@ -52,11 +61,13 @@ export const ProductComponent = (page: Prop) => {
                               <dd className={prog.name}>{lib.name}</dd>
                               <ul>
                                 {lib.action.map((act, l) => {
+                                  const caller = callSource(act.source)!;
                                   return (
                                     <div key={l}>
                                     <li className={mv.sum}>{act.summary}</li>
                                     <li className={mv.explain}>{act.explanation}</li>
-                                    <ReactMarkdown>{act.source}</ReactMarkdown>
+                                    関数呼び出し：
+                                    <ReactMarkdown children={caller} remarkPlugins={[remarkGfm]} />; 
                                     </div>
                                   );
                                 })}
@@ -73,11 +84,13 @@ export const ProductComponent = (page: Prop) => {
                               <dd>{frm.description}</dd>
                               <ul>
                                 {frm.action.map((act, n) => {
+                                  const caller = callSource(act.source)!;
                                   return (
                                     <div key={n}>
                                     <li className={mv.sum}>{act.summary}</li>
                                     <li className={mv.explain}>{act.explanation}</li>
-                                    <li><ReactMarkdown children={act.source} remarkPlugins={[remarkGfm]}></ReactMarkdown></li>
+                                    関数呼び出し：
+                                    <ReactMarkdown children={caller} remarkPlugins={[remarkGfm]} />; 
                                     </div>
                                   );
                                 })}
