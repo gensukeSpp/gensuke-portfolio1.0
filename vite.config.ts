@@ -9,11 +9,12 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 export default defineConfig({
   // NOTE: vanillaExtractPlugin is placed after reactRefresh and before the others.
   plugins: [vanillaExtractPlugin(), reactRefresh(), viteReactJsx(), tsconfigPaths()],
-  // build: {
-  //   watch: {
-  //     include: 'src/**'
-  //   }
-  // },
+  build: {
+    chunkSizeWarningLimit: 100000000
+    // watch: {
+    //   include: 'src/**'
+    // }
+  },
   server: {
     fs: {
       // Allow serving files from one level up to the project root

@@ -1,6 +1,42 @@
 
-const source1 =`
-- A direct URL: https://www.copycat.dev/
+const source1 =`form,inputタグのオプションを求めるかたちにしました。
+
+~~~javascript
+/* GETメソッドによりデータを受け渡すプラグイン */
+// 匿名関数で全体をラップ - (5)
+;(function($) {
+	// このプラグインの名前 - (1)
+	$.fn.sendData = function(options) {
+		//要素を退避 - (2)
+		var elements = this;
+		
+		// 渡されたオプションおよび独自データ属性をデフォルトにマージする
+		var setting = $.extend({}, $.fn.sendData.defaults, options);
+			
+		// 要素をひとつずつ処理 - (3)
+		// method chain用に要素を返す - (4)
+		return elements.each(function() {
+						
+		// 具体的な処理を以下に記述
+		...
+		});
+	}
+...
+}) (jQuery);
+
+~~~
+実際の利用
+
+~~~javascript
+/*
+* data: data-jumpの値
+* name: GETで渡す値を格納する変数名
+* action: 値を送る先
+*/
+$エレメントタグ名.on("click", function(){
+	$(this).sendData({data: "jump", name: "id", action: "products.php"});
+
+~~~
 `;
 
 const source2 =`

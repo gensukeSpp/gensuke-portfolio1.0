@@ -1,6 +1,8 @@
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { CodeProps } from "react-markdown/lib/ast-to-react";
 
 import { Product } from './portfolio_type';
 import { card, item, prog, mv } from './ProductPage.css';
@@ -66,8 +68,25 @@ export const ProductComponent = (page: Prop) => {
                                     <div key={l}>
                                     <li className={mv.sum}>{act.summary}</li>
                                     <li className={mv.explain}>{act.explanation}</li>
-                                    関数呼び出し：
-                                    <ReactMarkdown children={caller} remarkPlugins={[remarkGfm]} />; 
+                                    <ReactMarkdown
+                                      children={caller}
+                                      components={{
+                                        code({ node, inline, className, children, style, ...props }: CodeProps) {
+                                          const match = /language-(\w+)/.exec(className || "");
+                                          return !inline && match ? (
+                                            <SyntaxHighlighter
+                                              children={String(children).replace(/\n$/, "")}
+                                              language={match[1]}
+                                              {...props}
+                                            />
+                                          ) : (
+                                            <code className={className} {...props}>
+                                              {children}
+                                            </code>
+                                          );
+                                        },
+                                      }}
+                                    />
                                     </div>
                                   );
                                 })}
