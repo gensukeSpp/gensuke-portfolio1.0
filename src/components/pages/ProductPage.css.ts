@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 // import { recipe } from '@vanilla-extract/recipes';
 import { atoms } from '../../sprinkles.css'
 
-export const card = atoms({
+export const boundary = atoms({
 	paddingTop: {
 		mobile: 'small',
 		tablet: 'medium',
@@ -16,14 +16,14 @@ export const item = {
 	})
 }
 
-export const prog = {
+export const language = {
 	name: style({
 		fontSize: '1.2rem'
 	})
 }
 
-export const mv = {
-	sum: style({
+export const action = {
+	summary: style({
 		listStyleType: 'square'
 	}),
 	explain: style({

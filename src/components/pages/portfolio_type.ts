@@ -8,16 +8,9 @@ export interface Product {
   
 export interface Language {
 	program: string;
-	framework?: Framework[];
-	library?: Library[];
+	library: Library[];
 }
-  
-export interface Framework {
-	name: string;
-	description: string;
-	action: Action[];
-}
-  
+    
 export interface Library {
 	name: string;
 	description?: string;
@@ -30,29 +23,23 @@ interface Action {
 	source: string;
 }
   
-  // type Product = {
-  //   title: string,
-  //   term: string,
-  //   description?: string
-  // }
-  
-  // type Language = Product & {
-  //   program: string[]
-  // }
-  
-  // type Framework = Language & {
-  //   name: string,
-  //   description: string,
-  //   action: Action[]
-  // }
-  
-  // type Library = Language & {
-  //   name: string,
-  //   description?: string,
-  //   action: Action[]
-  // }
-  
-  // type Action = {
-  //   summary: string,
-  //   description: string
-  // }
+// type Product = {
+//   title: string,
+//   term: string,
+//   description?: string
+// }
+
+// type Language = Product & {
+//   program: string[]
+// }
+
+// type Library = Language & {
+//   name: string,
+//   description?: string,
+//   action: Action[]
+// }
+
+// type Action = {
+//   summary: string,
+//   description: string
+// }

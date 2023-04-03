@@ -1,51 +1,58 @@
 
-const source1 =`form,inputタグのオプションを求めるかたちにしました。
+const source1 =`
 
-~~~javascript
-/* GETメソッドによりデータを受け渡すプラグイン */
-// 匿名関数で全体をラップ - (5)
-;(function($) {
-	// このプラグインの名前 - (1)
-	$.fn.sendData = function(options) {
-		//要素を退避 - (2)
-		var elements = this;
-		
-		// 渡されたオプションおよび独自データ属性をデフォルトにマージする
-		var setting = $.extend({}, $.fn.sendData.defaults, options);
-			
-		// 要素をひとつずつ処理 - (3)
-		// method chain用に要素を返す - (4)
-		return elements.each(function() {
-						
-		// 具体的な処理を以下に記述
-		...
-		});
-	}
+~~~php
+<html>
+{include file="header.tpl"}
+<body>
 ...
-}) (jQuery);
-
-~~~
-実際の利用
-
-~~~javascript
-/*
-* data: data-jumpの値
-* name: GETで渡す値を格納する変数名
-* action: 値を送る先
-*/
-$エレメントタグ名.on("click", function(){
-	$(this).sendData({data: "jump", name: "id", action: "products.php"});
-
+<div id="main">
+{* 各ページコンテンツ挿入部分 *}
+{block name=main}{/block}
+</div>
 ~~~
 `;
 
 const source2 =`
 
-~~A strikethrough text~~
+~~~php
 
+phpファイル
+$inner = array(
+	array('num' => 'F', 'menu' =>'機能性食品'),
+	array('num' => 'S', 'menu' =>'お菓子'),
+	array('num' => 'C', 'menu' =>'化粧品'),
+	...
+tplファイル
+{foreach from=$inner item="value_i"}
+	<li><a href="#tab{$value_i.num}">{$value_i.menu}</a></li>
+{/foreach}
+~~~
 `;
 
-const source3 = `
+const source3 =`自作sendDataプラグインの利用
+
+~~~javascript
+/* 
+ * Param
+ * data: タグ属性data-{data}
+ * name: 渡す値のキー名
+ * action: 値の送り先
+ * */
+$エレメントタグ.on("click", function(){
+	$(this).sendData({data: "jump", name: "id", action: "products.php"});
+~~~
+
+~~~html
+	例：<div data-jump='商品id'>が
+	<form method='GET' action='products.php'>
+		<input name='id' value='jump' />
+	</form>
+~~~
+のような機能を持つ
+`;
+
+const source4 = `
 # GFM
 
 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, nemo!
@@ -76,21 +83,17 @@ A note[^1]
 `;
 
 export const callSource = (no: string) => {
-	// const [mdNum, setMdNum] = React.useState<string>("");
-
-  // React.useEffect(() => {
-  //   	setMdNum(no);
-  // }, []);
 
 	switch (no){
 		case "1":
 			// return <ReactMarkdown children={source1} remarkPlugins={[remarkGfm]}></ReactMarkdown>;
 			return source1;
 		case "2":
-			// return <ReactMarkdown children={source2} remarkPlugins={[remarkGfm]}></ReactMarkdown>;
 			return source2;
 		case "3":
 			return source3;
+		case "4":
+			return source4;
 		default:
 			alert("Nothing number");
 	}	
