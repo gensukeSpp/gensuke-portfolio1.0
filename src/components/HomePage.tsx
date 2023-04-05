@@ -5,6 +5,14 @@ import { introduction, skill, recipeVar } from './HomePage.css';
 const catalyst =
   '大学時代の終わり頃、古いパソコン処分しようとしましたが、レポートを作る、メールをするくらいしか使用しておらず、もったいないと思い、OSをWindowsからUNIX系OSに入れ替えました。それがきっかけでパソコンの構造など知る機会となり、メモリの増設、LANを組んだことから、さらにパソコンについての知識を深めようと思い、現在まで至ります。';
 
+const responsive: string = atoms({
+  width: {
+    mobile: 'full',
+    tablet: 'half',
+    desktop: 'normal',
+  },
+});
+
 const Introduction = () => {
   return (
     <>
@@ -19,15 +27,7 @@ const Skill = () => {
     <>
       <h4>Skill</h4>
       <div className={skill.flex}>
-        <dl
-          className={atoms({
-            width: {
-              mobile: 'full',
-              tablet: 'half',
-              desktop: 'normal',
-            },
-          })}
-        >
+        <dl className={responsive}>
           <dt
             className={`${skill.title} ${recipeVar({
               underBarColors: 'programming',
@@ -41,15 +41,7 @@ const Skill = () => {
             <a href="https://github.com/gensukeSpp/non-easy-responsive">課題１</a>
           </dd>
         </dl>
-        <dl
-          className={atoms({
-            width: {
-              mobile: 'full',
-              tablet: 'half',
-              desktop: 'normal',
-            },
-          })}
-        >
+        <dl className={responsive}>
           <dt
             className={`${skill.title} ${recipeVar({
               underBarColors: 'programming',
@@ -65,15 +57,7 @@ const Skill = () => {
             <a href="https://github.com/gensukeSpp/hot-spring-kohun">課題４</a>
           </dd>
         </dl>
-        <dl
-          className={atoms({
-            width: {
-              mobile: 'full',
-              tablet: 'half',
-              desktop: 'normal',
-            },
-          })}
-        >
+        <dl className={responsive}>
           <dt
             className={`${skill.title} ${recipeVar({
               underBarColors: 'programming',
@@ -86,15 +70,7 @@ const Skill = () => {
           </dd>
           <dd>Expressでサーバサイドアプリを作ることができます。</dd>
         </dl>
-        <dl
-          className={atoms({
-            width: {
-              mobile: 'full',
-              tablet: 'half',
-              desktop: 'normal',
-            },
-          })}
-        >
+        <dl className={responsive}>
           <dt
             className={`${skill.title} ${recipeVar({
               underBarColors: 'programming',
@@ -104,15 +80,7 @@ const Skill = () => {
           </dt>
           <dd>オブジェクト指向プログラミングを理解したうえで、開発を行います。</dd>
         </dl>
-        <dl
-          className={atoms({
-            width: {
-              mobile: 'full',
-              tablet: 'half',
-              desktop: 'normal',
-            },
-          })}
-        >
+        <dl className={responsive}>
           <dt
             className={`${skill.title} ${recipeVar({
               underBarColors: 'programming',
@@ -127,15 +95,7 @@ const Skill = () => {
             Github：<a href="https://github.com/gensukeSpp/gae-image-post/">ソースコード</a>
           </dd>
         </dl>
-        <dl
-          className={atoms({
-            width: {
-              mobile: 'full',
-              tablet: 'half',
-              desktop: 'normal',
-            },
-          })}
-        >
+        <dl className={responsive}>
           <dt
             className={`${skill.title} ${recipeVar({
               underBarColors: 'programming',
@@ -145,15 +105,7 @@ const Skill = () => {
           </dt>
           <dd>オリジナルテーマを開発した経験があります。</dd>
         </dl>
-        <dl
-          className={atoms({
-            width: {
-              mobile: 'full',
-              tablet: 'half',
-              desktop: 'normal',
-            },
-          })}
-        >
+        <dl className={responsive}>
           <dt
             className={`${skill.title} ${recipeVar({
               underBarColors: 'dtp',
@@ -163,15 +115,7 @@ const Skill = () => {
           </dt>
           <dd>就労支援トライズの訓練にて、基本操作は可能です。</dd>
         </dl>
-        <dl
-          className={atoms({
-            width: {
-              mobile: 'full',
-              tablet: 'half',
-              desktop: 'normal',
-            },
-          })}
-        >
+        <dl className={responsive}>
           <dt
             className={`${skill.title} ${recipeVar({
               underBarColors: 'enviorment',
@@ -180,6 +124,16 @@ const Skill = () => {
             Docker
           </dt>
           <dd>基礎的なDockerfile、docker-composeを用いた仮想環境を構築することができます。</dd>
+        </dl>
+        <dl className={responsive}>
+          <dt
+            className={`${skill.title} ${recipeVar({
+              underBarColors: 'study',
+            })}`}
+          >
+            鋭意勉強中…
+          </dt>
+          <dd>フロントエンド(React)、機械学習(高校数学から復習しつつ)、TDD(テスト駆動開発)、お金のかからないクラウド環境</dd>
         </dl>
       </div>
     </>
