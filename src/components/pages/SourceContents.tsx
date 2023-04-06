@@ -30,9 +30,11 @@ tplファイル
 ~~~
 `;
 
-const source3 =`自作sendDataプラグインの利用
+const source3 =`
 
 ~~~javascript
+自作sendDataプラグインの利用
+
 /* 
  * Param
  * data: タグ属性data-{data}
@@ -46,40 +48,39 @@ $エレメントタグ.on("click", function(){
 ~~~html
 	例：<div data-jump='商品id'>が
 	<form method='GET' action='products.php'>
-		<input name='id' value='jump' />
+		<input name='商品id' value='jump' />
 	</form>
+	の機能として、商品ページの目的の箇所までジャンプ
 ~~~
-のような機能を持つ
 `;
 
 const source4 = `
-# GFM
 
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, nemo!
+~~~javascript
+/*
+* モーダルウィンドウに対応した、シングルトンパターン
+*/
+SingletonTagModule関数
 
-## Autolink literals
+// 公開されない機能
+var instance;
+return {
+	// ここから公開された機能
 
-www.example.com, https://example.com, and contact@example.com.
+	getInstance: function(args) {
+		if(!instance) {
+			instance = new タグを生成する関数(args); // instanceがなければ関数()を実行
+		}
+		return instance;　// instanceを返す
+	}
+};
 
-## Footnote
-
-A note[^1]
-
-[^1]: Big note.
-
-## Strikethrough
-
-~one~ or ~~two~~ tildes.
-
-## Table
-
-| a | b  |  c |  d  |
-| - | :- | -: | :-: |
-
-## Tasklist
-
-* [ ] to do
-* [x] done
+SingletonTagModuleの利用
+	$モーダルウィンドウにしたい画像エレメント.on("click", function(e){
+		/* タグの生成を一度だけにしたクラスのインスタンス */
+		var st = SingletonTagModule.getInstance(...);
+		// モーダルウィンドウ表示処理
+		...
 `;
 
 export const callSource = (no: string) => {
