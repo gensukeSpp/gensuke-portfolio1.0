@@ -5,7 +5,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 
 import { Product } from './portfolio_type';
-import { boundary, item, language, action } from './ProductPage.css';
+import { boundary, item, language } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
 
@@ -55,11 +55,13 @@ export const ProductComponent = (page: Prop) => {
                                   <dl>
                                     {lib.action.map((act, l) => {
                                       //  ! is non-null assertion operator.
+                                      // Otherwise callSource method can't return to be undefined potential.
                                       const caller = callSource(act.source)!;
                                       return (
                                         <div key={l}>
                                         <dd className={action.summary}>{act.summary}</dd>
                                         <dd className={action.explain}>{act.explanation}</dd>
+                                        {/* From https://www.copycat.dev/blog/react-markdown/ */}
                                         <ReactMarkdown
                                           children={caller}
                                           components={{

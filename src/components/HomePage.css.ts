@@ -1,12 +1,21 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
+import { atoms } from '../sprinkles.css'
+
+export const boundary = atoms({
+	paddingTop: {
+		mobile: 'small',
+		tablet: 'medium',
+		desktop: 'large'
+	}
+});
 
 export const introduction = {
   myname: style({
     fontSize: '2rem',
   }),
   catalyst: style({
-    fontSize: '0.65rem',
+    fontSize: '0.9rem',
   }),
 };
 
@@ -40,6 +49,10 @@ export const recipeVar = recipe({
 });
 
 export const skill = {
+  h4skill: style({
+    fontSize: '1.5rem',
+    fontWeight: 'bold'
+  }),
   flex: style({
     display: 'flex',
     flexWrap: 'wrap',

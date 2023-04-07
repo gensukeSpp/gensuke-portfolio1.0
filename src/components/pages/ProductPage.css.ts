@@ -24,9 +24,9 @@ export const language = {
 
 export const action = {
 	summary: style({
-		listStyleType: 'square'
+
 	}),
-	explain: style({
-		listStyleType: 'disc'
+	explanation: style({
+		
 	})
 }
