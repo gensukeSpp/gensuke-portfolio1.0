@@ -66,7 +66,7 @@ const Skill = () => {
             Javascript(jQuery,Node.js)
           </dt>
           <dd>
-            jQeryでサイトに動きをつけました。詳細は<a href="#"></a>作品１で
+            jQueryでサイトに動きをつけました。詳細は<a href="#"></a>作品１で
           </dd>
           <dd>Expressでサーバサイドアプリを作ることができます。</dd>
         </dl>

@@ -24,9 +24,10 @@ export const language = {
 
 export const action = {
 	summary: style({
-
+		display: 'inline-block',
+		borderBottom: 'double'
 	}),
-	explanation: style({
-		
+	explain: style({
+		fontSize: '0.9rem'
 	})
 }

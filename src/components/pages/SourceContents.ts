@@ -16,7 +16,6 @@ const source1: string =`
 const source2: string =`
 
 ~~~php
-
 phpファイル
 $inner = array(
 	array('num' => 'F', 'menu' =>'機能性食品'),
@@ -99,7 +98,7 @@ class ExplainArticle(ndb.Model):
 
 
 # 画像オブジェクトに付随する、説明文を呼び出す場合
-target_article = target_blobimage.getting()
+target_article = ImageBlobオブジェクト.getting()
 ~~~
 `;
 
@@ -109,7 +108,7 @@ const source6: string =`
 
 ~~~python
 ログイン中かどうか、デコレータを作成
-以降の処理の際、@user_requiredで、ログインされていること前提
+以降@user_requiredをdef前に付加することで、ログインされていること前提の処理が加えられます
 def user_required(handler):
 	def check_login(self, *args):
 		if not auth.get_user_by_session():
@@ -117,6 +116,7 @@ def user_required(handler):
 		else:
 			user_session = self.auth.get_user_by_session()
 			user_instance = ユーザーモデルクラス.get_by_id(user_session['user_id'])
+			# ログインユーザー情報を返す
 			return handler(self, user_instance)
 	return check_login
 ~~~
