@@ -104,11 +104,11 @@ target_article = ImageBlobオブジェクト.getting()
 
 const source6: string =`
 
-[こちら](https://qiita.com/wasnot/items/029b94bc7ba9f189e8d4)に沿って、ある程度実装できます
+[こちら](https://qiita.com/wasnot/items/029b94bc7ba9f189e8d4)に沿って、ある程度実装可能
 
 ~~~python
 ログイン中かどうか、デコレータを作成
-以降@user_requiredをdef前に付加することで、ログインされていること前提の処理が加えられます
+以降@user_requiredをdef前に付与することで、ログインされていること前提の処理が加えられる
 def user_required(handler):
 	def check_login(self, *args):
 		if not auth.get_user_by_session():
@@ -138,6 +138,89 @@ application = webapp2.WSGIApplication([
 ~~~
 `;
 
+const source8: string =`
+
+~~~javascript
+const [products, setProducts] = React.useState<Product[]>([]);
+
+// APIよりデータを取得し、setProductsにてproductsに格納
+React.useEffect(() => {
+		const f = async () => {
+		const json = await fetchData;
+		setProducts(json);
+  };
+  f();
+}, []);
+
+// keyにページ番号を格納し、ページ番号ごとに表示を切り替えられる
+return (
+    <>
+      {products.map((product: Product, i) => {
+        if(i === key){
+          return (
+            <div key={i}>
+							...
+							<dt className={item.title}>タイトル：{product.title}</dt>
+							<dd>制作・更新期間{product.term}</dd>
+							...
+~~~
+`;
+
+const source9: string =`
+主に[こちら](https://www.copycat.dev/blog/react-markdown/)を参照
+
+~~~javascript
+// 以下コンポーネントより、シンタックスハイライト表現を実現
+import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+...
+<ReactMarkdown
+children = {マークダウン表記の記事}
+components={{
+	code({ node, inline, className, children, style, ...props }: CodeProps) {
+		const match = /language-(\\w+)/.exec(className || "");
+		return !inline && match ? (
+			<SyntaxHighlighter
+				children={String(children).replace(/\\n$/, "")}
+				language={match[1]}
+				{...props}
+			/>
+			...
+~~~
+`;
+
+const source10: string =`
+
+~~~javascript
+// sprinkles.css.ts
+const horizon = {
+  full: '98%',
+  half: '48%',
+  normal: '30%',
+};
+const responsiveStyles = createAtomicStyles({
+	...
+	properties: {
+		...
+		width: horizon
+	}
+
+// sprinkles呼び出し
+import { atoms } from '../sprinkles.css';
+...
+const responsive: string = atoms({
+  width: {
+    mobile: 'full',
+    tablet: 'half',
+    desktop: 'normal',
+  },
+});
+
+// コンポーネント定義箇所
+<dl className={responsive}>
+~~~
+`;
+
 export const callSource = (no: string) => {
 
 	switch (no){
@@ -156,6 +239,12 @@ export const callSource = (no: string) => {
 			return source6;
 		case "7":
 			return source7;
+		case "8":
+			return source8;
+		case "9":
+			return source9;
+		case "10":
+			return source10;
 		default:
 			alert("Nothing number");
 	}

@@ -1,5 +1,5 @@
 import { styles } from './TopPage.css';
-import { SharedLayout } from '~/components/layouts/SharedLayout';
+// import { SharedLayout } from '~/components/layouts/SharedLayout';
 import { Head } from '~/components/layouts/common/Head';
 import { HomePage } from '~/components/HomePage';
 import { Link } from 'rocon/react';
@@ -9,7 +9,7 @@ export const TopPage = () => {
   return (
     <>
       <Head title={'Top Page'} description={'This is top page.'} />
-      <SharedLayout>
+      {/* <SharedLayout> */}
         <div className={styles.root}>Top Page</div>
         {/* <ul className={styles.links}>
           <li>
@@ -22,7 +22,7 @@ export const TopPage = () => {
             <Link route={topLevelRoutes._.linaria}>Linaria</Link>
           </li>
         </ul> */}
-      </SharedLayout>
+      {/* </SharedLayout> */}
       <HomePage />
       <ul>
         <li>
@@ -30,6 +30,9 @@ export const TopPage = () => {
         </li>
         <li>
           <Link route={productPageBuilder.route} match={{"page": "1"}}>作品２</Link>
+        </li>
+        <li>
+          <Link route={productPageBuilder.route} match={{"page": "2"}}>作品３</Link>
         </li>
       </ul>
     </>
