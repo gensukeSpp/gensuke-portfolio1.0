@@ -5,13 +5,13 @@ const space = {
   none: 0,
   small: '4px',
   medium: '8px',
-  large: '16px',
+  large: '24px',
   // etc.
 };
 const horizon = {
   full: '98%',
   half: '48%',
-  normal: '30%',
+  normal: '28%',
 };
 
 const responsiveStyles = createAtomicStyles({

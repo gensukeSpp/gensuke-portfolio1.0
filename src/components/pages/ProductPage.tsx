@@ -5,7 +5,8 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 
 import { Product } from './portfolio_type';
-import { action, boundary, item, language } from './ProductPage.css';
+import { boundaryY } from '../sprinkles.boundary.css';
+import { action, item, language, library } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
 
@@ -28,6 +29,7 @@ export const ProductComponent = (page: Prop) => {
     };
     f();
   }, []);
+  console.log(products);
 
   const key: keyof string = page.pageNum;
 
@@ -38,22 +40,22 @@ export const ProductComponent = (page: Prop) => {
           return (
             <div key={i}>{i}:KEY={key}
               <img src="" alt={`${product.title}` + "のスクリーンショット"} />
-              <dl className={boundary}>
+              <dl className={boundaryY}>
                 <dt className={item.title}>タイトル：{product.title}</dt>
                 <dd>制作・更新期間{product.term}</dd>
                 <dd>{product.presentation}</dd>
                   {product.language.map((lang, j) => {
                     return (
                       <div key={j}>
-                        <dl className={boundary}>
+                        <dl className={boundaryY}>
                           <dt className={language.name}>使用言語：{lang.program}</dt>
-                          <dl className={boundary}>
+                          <dl className={boundaryY}>
                             {lang.library?.map((lib, k) => {
                               return (
                                 <div key={k}>
-                                  <dt className={language.name}>{lib.name}</dt>
-                                  <dd>{lib.description}</dd>
-                                  <dl className={boundary}>
+                                  <dt className={library.name}>{lib.name}</dt>
+                                  <dd className={library.description}>{lib.description}</dd>
+                                  <dl className={boundaryY}>
                                     {lib.action.map((act, l) => {
                                       //  ! is non-null assertion operator.
                                       // Otherwise callSource method can't return to be undefined potential.
@@ -64,6 +66,7 @@ export const ProductComponent = (page: Prop) => {
                                         <dd className={action.explain}>{act.explanation}</dd>
                                         {/* From https://www.copycat.dev/blog/react-markdown/ */}
                                         <ReactMarkdown
+                                          className={action.source}
                                           children={caller}
                                           components={{
                                             code({ node, inline, className, children, style, ...props }: CodeProps) {
@@ -102,4 +105,8 @@ export const ProductComponent = (page: Prop) => {
       })}
     </>
   );
+}
+
+const ActionComponent = () => {
+
 }

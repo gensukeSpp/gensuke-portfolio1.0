@@ -146,7 +146,7 @@ const [products, setProducts] = React.useState<Product[]>([]);
 // APIよりデータを取得し、setProductsにてproductsに格納
 React.useEffect(() => {
 		const f = async () => {
-		const json = await fetchData;
+		const json = await データ取得関数;
 		setProducts(json);
   };
   f();
@@ -167,6 +167,7 @@ return (
 `;
 
 const source9: string =`
+
 主に[こちら](https://www.copycat.dev/blog/react-markdown/)を参照
 
 ~~~javascript

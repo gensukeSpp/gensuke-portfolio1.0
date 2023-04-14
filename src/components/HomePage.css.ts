@@ -1,22 +1,33 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
-import { atoms } from '../sprinkles.css'
 
-export const boundary = atoms({
-	paddingTop: {
-		mobile: 'small',
-		tablet: 'medium',
-		desktop: 'large'
-	}
+export const headMenu = style({
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between',
+  flexDirection: 'row',
+  backgroundColor: 'lightgreen',
 });
+
+export const menuItem = {
+  anchor: style({
+    fontSize: '0.9rem',
+    color: 'initial',
+    textDecoration: 'initial',
+    textAlign: 'center',  
+  })
+}
 
 export const introduction = {
   myname: style({
-    fontSize: '2rem',
+    fontSize: '1.5rem',
   }),
   catalyst: style({
     fontSize: '0.9rem',
   }),
+  topPhoto: style({
+    float: 'right'
+  })
 };
 
 // const themeVars = createGlobalTheme("", {
@@ -47,11 +58,11 @@ export const recipeVar = recipe({
     },
   },
 });
-
 export const skill = {
   h4skill: style({
-    fontSize: '1.5rem',
-    fontWeight: 'bold'
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    textAlign: 'center'
   }),
   flex: style({
     display: 'flex',
@@ -62,11 +73,12 @@ export const skill = {
   // 	width: "30%"
   // }),
   title: style({
-    fontSize: '1.25rem',
+    fontSize: '1.5rem',
     textDecorationLine: 'underline',
     textDecorationThickness: '0.5rem',
     // textDecorationColor: "yellow",
     textUnderlineOffset: '-0.25rem',
     textDecorationSkipInk: 'none',
+    textAlign: 'center'
   }),
 };

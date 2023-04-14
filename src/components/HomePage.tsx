@@ -1,9 +1,10 @@
+import { Link } from 'rocon/react';
+import { Element, Link as ScrollLink } from 'react-scroll'
+
+import { productPageBuilder } from './Routes';
 import { atoms } from '../sprinkles.css';
-
-import { introduction, skill, recipeVar } from './HomePage.css';
-
-const catalyst =
-  '大学時代の終わり頃、古いパソコン処分しようとしましたが、レポートを作る、メールをするくらいしか使用しておらず、もったいないと思い、OSをWindowsからUNIX系OSに入れ替えました。それがきっかけでパソコンの構造など知る機会となり、メモリの増設、LANを組んだことから、さらにパソコンについての知識を深めようと思い、現在まで至ります。';
+import { boundaryY, boundaryTop } from './sprinkles.boundary.css';
+import { introduction, skill, recipeVar, headMenu } from './HomePage.css';
 
 const responsive: string = atoms({
   width: {
@@ -13,21 +14,49 @@ const responsive: string = atoms({
   },
 });
 
-const Introduction = () => {
+const HeaderMenu = () => {
+  return (
+    <div className={headMenu}>
+      <ScrollLink to="intro" smooth={true} duration={500}>
+        きっかけ
+      </ScrollLink>
+      <ScrollLink to="skill" smooth={true} duration={500}>
+        Skill
+      </ScrollLink>
+      <ul>
+        <li>
+          <Link route={productPageBuilder.route} match={{"page": "0"}}>作品１</Link>
+        </li>
+        <li>
+          <Link route={productPageBuilder.route} match={{"page": "1"}}>作品２</Link>
+        </li>
+        <li>
+          <Link route={productPageBuilder.route} match={{"page": "2"}}>作品３</Link>
+        </li>
+      </ul>
+    </div>
+  )
+}
+
+const catalyst =
+  '大学時代の終わり頃、古いパソコン処分しようとしましたが、レポートを作る、メールをするくらいしか使用しておらず、もったいないと思い、OSをWindowsからUNIX系OSに入れ替えました。それがきっかけでパソコンの構造など知る機会となり、メモリの増設、LANを組んだことから、さらにパソコンについての知識を深めようと思い、現在まで至ります。';
+
+export const Introduction = () => {
   return (
     <>
-      <h2 className={introduction.myname}>Manabu Aihara</h2>
-      <p className={introduction.catalyst}>{`${catalyst}`}</p>
+      {/* <h2 className={introduction.myname}>Manabu Aihara</h2> */}
+      <p className={`${introduction.catalyst} ${boundaryY}`}>{`${catalyst}`}</p>
+      <img src="" alt="トップイメージ画像" className={introduction.topPhoto} />
     </>
   );
 };
 
-const Skill = () => {
+export const Skill = () => {
   return (
     <>
-      <h4>Skill</h4>
-      <div className={skill.flex}>
-        <dl className={responsive}>
+      <h4 className={`${skill.h4skill} ${boundaryY}`}>Skill</h4>
+      <div className={`${skill.flex} ${boundaryTop}`}>
+        <dl className={`${boundaryTop} ${responsive}`}>
           <dt
             className={`${skill.title} ${recipeVar({
               underBarColors: 'programming',
@@ -49,7 +78,7 @@ const Skill = () => {
           >
             Sass
           </dt>
-          <dd>CSSを階層化・変数化させることで開発効率を上げます。</dd>
+          <dd>CSSを階層化・変数や制御構文を用いることで開発効率を上げます。</dd>
           <dd>
             就労支援トライズにて、訓練。
             <a href="https://github.com/gensukeSpp/sweets-shop">課題２</a>
@@ -66,7 +95,7 @@ const Skill = () => {
             Javascript(jQuery,Node.js)
           </dt>
           <dd>
-            jQueryでサイトに動きをつけました。詳細は<a href="#"></a>作品１で
+            jQueryでサイトに動きをつけました。詳細は<Link route={productPageBuilder.route} match={{"page": "0"}}>作品１</Link>で
           </dd>
           <dd>Expressでサーバサイドアプリを作ることができます。</dd>
         </dl>
@@ -78,7 +107,7 @@ const Skill = () => {
           >
             Java
           </dt>
-          <dd>オブジェクト指向プログラミングを理解したうえで、開発を行います。</dd>
+          <dd>オブジェクト指向プログラミングを理解したうえで、開発を行うことができます。</dd>
         </dl>
         <dl className={responsive}>
           <dt
@@ -89,10 +118,10 @@ const Skill = () => {
             Python
           </dt>
           <dd>
-            クラウド環境Google App Engineを使った開発を行いました。詳細は<a href="#"></a>作品２で
+            クラウド環境Google App Engineを使った開発を行いました。詳細は<Link route={productPageBuilder.route} match={{"page": "1"}}>作品２</Link>で
           </dd>
           <dd>
-            Github：<a href="https://github.com/gensukeSpp/gae-image-post/">ソースコード</a>
+            Github：<a href="#">ソースコード</a>
           </dd>
         </dl>
         <dl className={responsive}>
@@ -113,7 +142,7 @@ const Skill = () => {
           >
             illustrator
           </dt>
-          <dd>就労支援トライズの訓練にて、基本操作は可能です。</dd>
+          <dd>就労支援トライズにて訓練、基本操作は可能です。</dd>
         </dl>
         <dl className={responsive}>
           <dt
@@ -143,8 +172,13 @@ const Skill = () => {
 export const HomePage = () => {
   return (
     <>
-      <Introduction />
-      <Skill />
+      <HeaderMenu />
+      <Element name="intro">
+        <Introduction />
+      </Element>
+      <Element name="skill">
+        <Skill />
+      </Element>
     </>
   );
 };

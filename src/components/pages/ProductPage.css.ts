@@ -1,14 +1,5 @@
 import { style } from '@vanilla-extract/css';
 // import { recipe } from '@vanilla-extract/recipes';
-import { atoms } from '../../sprinkles.css'
-
-export const boundary = atoms({
-	paddingTop: {
-		mobile: 'small',
-		tablet: 'medium',
-		desktop: 'large'
-	}
-});
 
 export const item = {
 	title: style({
@@ -22,12 +13,25 @@ export const language = {
 	})
 }
 
+export const library = {
+	name: style({
+		fontWeight: 'bold',
+		backgroundColor: 'lightslategrey'
+	}),
+	description: style({
+		backgroundColor: 'aquamarine'
+	})
+}
+
 export const action = {
 	summary: style({
 		display: 'inline-block',
 		borderBottom: 'double'
 	}),
 	explain: style({
+		fontSize: '0.9rem'
+	}),
+	source: style({
 		fontSize: '0.9rem'
 	})
 }
