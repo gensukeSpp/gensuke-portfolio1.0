@@ -1,42 +1,38 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-import { bgImgVar } from '../img.css'
-
-export const headMenu = style({
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'space-between',
-  flexDirection: 'row',
-  backgroundColor: 'lightgreen',
-});
-
 export const menuItem = {
+  wrap: style({
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    flexDirection: 'row',
+    backgroundColor: 'lightgreen',
+  }), 
   anchor: style({
     fontSize: '0.9rem',
-    color: 'initial',
-    textDecoration: 'initial',
     textAlign: 'center',  
   })
 }
 
 export const introduction = {
-  myname: style({
-    fontSize: '1.5rem',
+  wrap: style({
+    display: 'flex',
+    flexWrap: 'wrap',
+  }),
+  space: style({
+    flex: '0 0 20%',
+  }),
+  topPhoto: style({
+    flex: '0 0 80%',
+    objectFit: 'contain',
+    width: '100%',
+    textAlign: 'right',
   }),
   catalyst: style({
     fontSize: '0.9rem',
   }),
-  topPhoto: style({
-    backgroundColor: bgImgVar,
-    objectFit: 'contain',
-    width: '100%',
-    textAlign: 'right',
-  })
 };
-// export const topImg = style({
-//   backgroundImage: bgImgVar
-// })
 
 // const themeVars = createGlobalTheme("", {
 // 	colors: {
@@ -61,7 +57,7 @@ export const recipeVar = recipe({
         textDecorationColor: 'limegreen',
       },
       study: {
-        textDecorationColor: 'gray',
+        textDecorationColor: 'lightgray',
       },
     },
   },
@@ -72,7 +68,7 @@ export const skill = {
     fontWeight: 'bold',
     textAlign: 'center'
   }),
-  flex: style({
+  wrap: style({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
@@ -89,4 +85,8 @@ export const skill = {
     textDecorationSkipInk: 'none',
     textAlign: 'center'
   }),
+  link: style({
+    color: 'blue',
+    textDecoration: 'underline'
+  })
 };

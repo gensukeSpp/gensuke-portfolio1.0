@@ -3,8 +3,10 @@ import { Element, Link as ScrollLink } from 'react-scroll'
 
 import { productPageBuilder } from './Routes';
 import { atoms } from '../sprinkles.css';
-import { boundaryY, boundaryTop } from './sprinkles.boundary.css';
-import { introduction, skill, recipeVar, headMenu } from './TopPage.css';
+import { boundaryY, boundaryTop, boundaryBottom } from './sprinkles.boundary.css';
+import { introduction, skill, recipeVar, menuItem } from './TopPage.css';
+
+import topImage from '../image/portfolio_top.jpg';
 
 const responsive: string = atoms({
   width: {
@@ -27,22 +29,23 @@ const HeaderMenu = () => {
     //     <Link route={topLevelRoutes._.linaria}>Linaria</Link>
     //   </li>
     // </ul>
-    <div className={headMenu}>
+    <div className={menuItem.wrap}>
       <ScrollLink to="intro" smooth={true} duration={500}>
         きっかけ
       </ScrollLink>
       <ScrollLink to="skill" smooth={true} duration={500}>
         Skill
       </ScrollLink>
-      <ul>
+      <div>作品紹介</div>
+      <ul style={{display: "none"}}>
         <li>
-          <Link route={productPageBuilder.route} match={{"page": "0"}}>作品１</Link>
+          <Link route={productPageBuilder.route} match={{"page": "0"}} className={menuItem.anchor}>作品１</Link>
         </li>
         <li>
-          <Link route={productPageBuilder.route} match={{"page": "1"}}>作品２</Link>
+          <Link route={productPageBuilder.route} match={{"page": "1"}} className={menuItem.anchor}>作品２</Link>
         </li>
         <li>
-          <Link route={productPageBuilder.route} match={{"page": "2"}}>作品３</Link>
+          <Link route={productPageBuilder.route} match={{"page": "2"}} className={menuItem.anchor}>作品３</Link>
         </li>
       </ul>
     </div>
@@ -55,9 +58,11 @@ const catalyst: string =
 export const Introduction = () => {
   return (
     <>
-      {/* <h2 className={introduction.myname}>Manabu Aihara</h2> */}
-      <img alt="トップイメージ画像" className={introduction.topPhoto} />
-      <p className={`${introduction.catalyst} ${boundaryY}`}>{`${catalyst}`}</p>
+      <div className={`${introduction.wrap} ${boundaryY}`}>
+        {/* <h2 className={introduction.myname}>Manabu Aihara</h2> */}
+        <img src={topImage} alt="トップイメージ画像" className={introduction.topPhoto} />
+      </div>
+      <p className={introduction.catalyst}>{`${catalyst}`}</p>
     </>
   );
 };
@@ -65,8 +70,8 @@ export const Introduction = () => {
 export const Skill = () => {
   return (
     <>
-      <h4 className={`${skill.h4skill} ${boundaryY}`}>Skill</h4>
-      <div className={`${skill.flex} ${boundaryTop}`}>
+      <h4 className={`${skill.h4skill} ${boundaryTop}`}>Skill</h4>
+      <div className={`${skill.wrap} ${boundaryTop}`}>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
             className={`${skill.title} ${recipeVar({
@@ -83,7 +88,7 @@ export const Skill = () => {
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
-            className={`${skill.title} ${recipeVar({
+            className={`${skill.title} ${boundaryBottom} ${recipeVar({
               underBarColors: 'programming',
             })}`}
           >
@@ -99,7 +104,7 @@ export const Skill = () => {
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
-            className={`${skill.title} ${recipeVar({
+            className={`${skill.title} ${boundaryBottom} ${recipeVar({
               underBarColors: 'programming',
             })}`}
           >
@@ -112,7 +117,7 @@ export const Skill = () => {
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
-            className={`${skill.title} ${recipeVar({
+            className={`${skill.title} ${boundaryBottom} ${recipeVar({
               underBarColors: 'programming',
             })}`}
           >
@@ -122,7 +127,7 @@ export const Skill = () => {
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
-            className={`${skill.title} ${recipeVar({
+            className={`${skill.title} ${boundaryBottom} ${recipeVar({
               underBarColors: 'programming',
             })}`}
           >
@@ -137,7 +142,7 @@ export const Skill = () => {
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
-            className={`${skill.title} ${recipeVar({
+            className={`${skill.title} ${boundaryBottom} ${recipeVar({
               underBarColors: 'programming',
             })}`}
           >
@@ -147,7 +152,7 @@ export const Skill = () => {
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
-            className={`${skill.title} ${recipeVar({
+            className={`${skill.title} ${boundaryBottom} ${recipeVar({
               underBarColors: 'dtp',
             })}`}
           >
@@ -157,7 +162,7 @@ export const Skill = () => {
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
-            className={`${skill.title} ${recipeVar({
+            className={`${skill.title} ${boundaryBottom} ${recipeVar({
               underBarColors: 'enviorment',
             })}`}
           >
@@ -167,7 +172,7 @@ export const Skill = () => {
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
-            className={`${skill.title} ${recipeVar({
+            className={`${skill.title} ${boundaryBottom} ${recipeVar({
               underBarColors: 'study',
             })}`}
           >

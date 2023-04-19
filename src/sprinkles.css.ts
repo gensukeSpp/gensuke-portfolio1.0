@@ -3,8 +3,8 @@ import { createAtomicStyles, createAtomsFn } from '@vanilla-extract/sprinkles';
 
 const space = {
   none: 0,
-  small: '4px',
-  medium: '8px',
+  small: '8px',
+  medium: '16px',
   large: '24px',
   // etc.
 };
