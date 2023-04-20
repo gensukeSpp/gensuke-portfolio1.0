@@ -7,27 +7,31 @@ export const menuItem = {
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     flexDirection: 'row',
-    backgroundColor: 'lightgreen',
+    backgroundColor: 'lightblue',
+    // https://teratail.com/questions/193795より、
+    // しっかり横幅を持つ
+    position: 'fixed',
+    width: '76vw',
   }), 
   anchor: style({
     fontSize: '0.9rem',
+    fontWeight: 'bold',
     textAlign: 'center',  
   })
 }
 
 export const introduction = {
-  wrap: style({
-    display: 'flex',
-    flexWrap: 'wrap',
-  }),
-  space: style({
-    flex: '0 0 20%',
-  }),
+  // wrap: style({
+  //   display: 'flex',
+  //   flexWrap: 'wrap',
+  // }),
+  // space: style({
+  //   flex: '0 0 20%',
+  // }),
   topPhoto: style({
-    flex: '0 0 80%',
-    objectFit: 'contain',
-    width: '100%',
-    textAlign: 'right',
+    // flex: '0 0 80%',
+    objectFit: 'cover',
+    aspectRatio: '16/9',
   }),
   catalyst: style({
     fontSize: '0.9rem',

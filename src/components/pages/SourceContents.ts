@@ -222,7 +222,7 @@ const responsive: string = atoms({
 ~~~
 `;
 
-export const callSource = (no: string) => {
+export const callSource = (no: string): string => {
 
 	switch (no){
 		case "1":
@@ -246,7 +246,8 @@ export const callSource = (no: string) => {
 			return source9;
 		case "10":
 			return source10;
+		// 以下がなければ、Function lacks ending return statement and return type does not include 'undefined'.
 		default:
-			alert("Nothing number");
+			throw new Error("Nothing number");
 	}
 }

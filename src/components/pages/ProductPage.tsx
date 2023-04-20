@@ -59,7 +59,8 @@ export const ProductComponent = (page: Prop) => {
                                     {lib.action.map((act, l) => {
                                       //  ! is non-null assertion operator.
                                       // Otherwise callSource method can't return to be undefined potential.
-                                      const caller = callSource(act.source)!;
+                                      // const caller = callSource(act.source)!;
+                                      const caller = callSource(act.source);
                                       return (
                                         <div key={l}>
                                         <dd className={action.summary}>{act.summary}</dd>
