@@ -21,15 +21,7 @@ export const menuItem = {
 }
 
 export const introduction = {
-  // wrap: style({
-  //   display: 'flex',
-  //   flexWrap: 'wrap',
-  // }),
-  // space: style({
-  //   flex: '0 0 20%',
-  // }),
   topPhoto: style({
-    // flex: '0 0 80%',
     objectFit: 'cover',
     aspectRatio: '16/9',
   }),

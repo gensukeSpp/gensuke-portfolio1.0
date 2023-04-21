@@ -1,11 +1,11 @@
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+// import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 
-import { Product } from './portfolio_type';
-import { boundaryY } from '../sprinkles.boundary.css';
+import { Library, Product } from './portfolio_type';
+import { boundaryY, boundaryTop, boundaryBottom } from '../sprinkles.boundary.css';
 import { action, item, language, library } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
@@ -36,10 +36,10 @@ export const ProductComponent = (page: Prop) => {
   return (
     <>
       {products.map((product: Product, i) => {
-        if(i === key){
+        if (i === key)
           return (
             <div key={i}>{i}:KEY={key}
-              <img src="" alt={`${product.title}` + "のスクリーンショット"} />
+              <img src={product.screen} alt={`${product.title}` + "のスクリーンショット"} />
               <dl className={boundaryY}>
                 <dt className={item.title}>タイトル：{product.title}</dt>
                 <dd>制作・更新期間{product.term}</dd>
@@ -47,22 +47,22 @@ export const ProductComponent = (page: Prop) => {
                   {product.language.map((lang, j) => {
                     return (
                       <div key={j}>
-                        <dl className={boundaryY}>
+                        <dl className={boundaryTop}>
                           <dt className={language.name}>使用言語：{lang.program}</dt>
-                          <dl className={boundaryY}>
+                          <dl className={boundaryTop}>
                             {lang.library?.map((lib, k) => {
                               return (
                                 <div key={k}>
                                   <dt className={library.name}>{lib.name}</dt>
                                   <dd className={library.description}>{lib.description}</dd>
-                                  <dl className={boundaryY}>
-                                    {lib.action.map((act, l) => {
-                                      //  ! is non-null assertion operator.
-                                      // Otherwise callSource method can't return to be undefined potential.
-                                      // const caller = callSource(act.source)!;
-                                      const caller = callSource(act.source);
-                                      return (
-                                        <div key={l}>
+                                  <dl className={boundaryTop}>
+                                  {lib.action.map((act, l) => {
+                                    //  ! is non-null assertion operator.
+                                    // Otherwise callSource method can't return to be undefined potential.
+                                    // const caller = callSource(act.source)!;
+                                    const caller = callSource(act.source);
+                                    return (
+                                      <div key={l} className={boundaryBottom}>
                                         <dd className={action.summary}>{act.summary}</dd>
                                         <dd className={action.explain}>{act.explanation}</dd>
                                         {/* From https://www.copycat.dev/blog/react-markdown/ */}
@@ -86,9 +86,9 @@ export const ProductComponent = (page: Prop) => {
                                             },
                                           }}
                                         />
-                                        </div>
-                                      );
-                                    })}
+                                      </div>
+                                    );
+                                  })}
                                   </dl>
                                 </div>
                               );
@@ -101,13 +101,11 @@ export const ProductComponent = (page: Prop) => {
                 <a href={`${product.link}`}>作品ページ</a>
               </dl>
             </div>
-          ); 
-        }
+          );
       })}
     </>
   );
 }
 
-const ActionComponent = () => {
-
+const ActionComponent = (lib: Library) => {
 }

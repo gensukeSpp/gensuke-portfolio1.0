@@ -16,7 +16,7 @@ export const language = {
 export const library = {
 	name: style({
 		fontWeight: 'bold',
-		backgroundColor: 'lightslategrey'
+		backgroundColor: 'lightpink'
 	}),
 	description: style({
 		backgroundColor: 'aquamarine'

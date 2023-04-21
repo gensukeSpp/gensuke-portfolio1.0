@@ -48,8 +48,9 @@ $エレメントタグ.on("click", function(){
 	例：<div data-jump='商品id'>が
 	<form method='GET' action='products.php'>
 		<input name='商品id' value='jump' />
+		<submit>
 	</form>
-	の機能として、商品ページの目的の箇所までジャンプ
+	の機能として、/product.php?id={商品id}のurlで、目的の箇所までジャンプ
 ~~~
 `;
 
@@ -70,7 +71,7 @@ return {
 		if(!instance) {
 			instance = new タグを生成する関数(args); // instanceがなければ関数()を実行
 		}
-		return instance;　// instanceを返す
+		return instance; // instanceを返す
 	}
 };
 
@@ -104,7 +105,7 @@ target_article = ImageBlobオブジェクト.getting()
 
 const source6: string =`
 
-[こちら](https://qiita.com/wasnot/items/029b94bc7ba9f189e8d4)に沿って、ある程度実装可能
+https://qiita.com/wasnot/items/029b94bc7ba9f189e8d4に沿って、ある程度実装可能
 
 ~~~python
 ログイン中かどうか、デコレータを作成
@@ -168,7 +169,7 @@ return (
 
 const source9: string =`
 
-主に[こちら](https://www.copycat.dev/blog/react-markdown/)を参照
+https://www.copycat.dev/blog/react-markdown/を参照
 
 ~~~javascript
 // 以下コンポーネントより、シンタックスハイライト表現を実現
@@ -176,11 +177,9 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 ...
 <ReactMarkdown
-children = {マークダウン表記の記事}
-components={{
-	code({ node, inline, className, children, style, ...props }: CodeProps) {
-		const match = /language-(\\w+)/.exec(className || "");
-		return !inline && match ? (
+	children = {マークダウン表記の記事}
+	components={{
+		...
 			<SyntaxHighlighter
 				children={String(children).replace(/\\n$/, "")}
 				language={match[1]}

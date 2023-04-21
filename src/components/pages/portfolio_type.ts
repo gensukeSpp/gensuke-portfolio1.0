@@ -1,4 +1,5 @@
 export interface Product {
+	screen?: string; 
 	title: string;
 	term: string;
 	presentation?: string;
