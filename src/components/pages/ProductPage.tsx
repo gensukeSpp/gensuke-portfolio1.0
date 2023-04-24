@@ -9,6 +9,7 @@ import { boundaryY, boundaryTop, boundaryBottom } from '../sprinkles.boundary.cs
 import { action, item, language, library } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
+import { TopCaptureComponent } from './RetrieveCapture';
 
 // https://www.choge-blog.com/programming/typescriptelement-implicitly-has-an-any-type-because-expression-of-type-string-cant-be-used-to-index-typeerrorsolution/
 type Prop = {
@@ -39,7 +40,8 @@ export const ProductComponent = (page: Prop) => {
         if (i === key)
           return (
             <div key={i}>{i}:KEY={key}
-              <img src={product.screen} alt={`${product.title}` + "のスクリーンショット"} />
+              {/* <img src={product.screen} alt={`${product.title}` + "のスクリーンショット"} /> */}
+              <TopCaptureComponent keyNumber={key} title={product.title} />
               <dl className={boundaryY}>
                 <dt className={item.title}>タイトル：{product.title}</dt>
                 <dd>制作・更新期間{product.term}</dd>
