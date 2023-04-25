@@ -9,9 +9,13 @@ import { boundaryY, boundaryTop, boundaryBottom } from '../sprinkles.boundary.cs
 import { action, item, language, library } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
-import { TopCaptureComponent } from './RetrieveCapture';
+import { NewKey, TopCaptureComponent } from './RetrieveCapture';
 
-// https://www.choge-blog.com/programming/typescriptelement-implicitly-has-an-any-type-because-expression-of-type-string-cant-be-used-to-index-typeerrorsolution/
+/**
+  * Element implicitly has an 'any' type because index expression is not of type 'number'
+  * solution ↓
+  * https://www.choge-blog.com/programming/typescriptelement-implicitly-has-an-any-type-because-expression-of-type-string-cant-be-used-to-index-typeerrorsolution/
+*/
 type Prop = {
   [pageNum: string]: number
 }
@@ -33,6 +37,7 @@ export const ProductComponent = (page: Prop) => {
   console.log(products);
 
   const key: keyof string = page.pageNum;
+  const newKey: NewKey = 0;
 
   return (
     <>
@@ -41,7 +46,7 @@ export const ProductComponent = (page: Prop) => {
           return (
             <div key={i}>{i}:KEY={key}
               {/* <img src={product.screen} alt={`${product.title}` + "のスクリーンショット"} /> */}
-              <TopCaptureComponent keyNumber={key} title={product.title} />
+              <TopCaptureComponent keyNumber={newKey} title={product.title} />
               <dl className={boundaryY}>
                 <dt className={item.title}>タイトル：{product.title}</dt>
                 <dd>制作・更新期間{product.term}</dd>
