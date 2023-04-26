@@ -1,20 +1,21 @@
-import { Link } from 'rocon/react';
+import { Rocon, Link } from 'rocon/react';
 
 import { productPageBuilder } from '../Routes';
-
-// type Prop = {
-//   [pageNum: string]: number
-// }
+import { TopPage } from '../TopPage';
 
 const searchNum = window.location.search;
-let menuItemLinks: string[] = ["0", "1", "2"];
-menuItemLinks[searchNum] = null;
+
+let productPageArray: (string | null)[] = ["0", "1", "2"];
+productPageArray[Number(searchNum)] = null;
+
+const rootPath = Rocon.Path()
+  .route("top", (route) => route.action(() => <TopPage />));
 
 const ProductPageMenu = () => {
 	return (
 		<ul>
 			<li>
-				<Link route={productPageBuilder.route} match={{"page": "0"}} className={menuItem.anchor}>作品１</Link>
+				<Link route={rootPath._.top} className={menuItem.anchor}>戻る</Link>
 			</li>
 			<li>
 				<Link route={productPageBuilder.route} match={{"page": "1"}} className={menuItem.anchor}>作品２</Link>
