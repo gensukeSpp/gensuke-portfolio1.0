@@ -4,7 +4,7 @@ import { Element, Link as ScrollLink } from 'react-scroll'
 import { productPageBuilder } from './Routes';
 import { atoms } from '../sprinkles.css';
 import { boundaryY, boundaryTop, boundaryBottom } from './sprinkles.boundary.css';
-import { introduction, skill, recipeVar, menuItem } from './TopPage.css';
+import { introduction, skill, recipeVar, menuItem, footer } from './TopPage.css';
 
 import topImage from '../image/portfolio_top.jpg';
 
@@ -40,13 +40,13 @@ const HeaderMenu = () => {
         <summary style={{listStyleType: "none"}}>作品紹介</summary>
         <ul>
           <li>
-            <Link route={productPageBuilder.route} match={{"page": "0"}} className={menuItem.anchor}>作品１</Link>
+            <Link route={productPageBuilder.route} match={{"page": "0"}} className={menuItem.link}>作品１</Link>
           </li>
           <li>
-            <Link route={productPageBuilder.route} match={{"page": "1"}} className={menuItem.anchor}>作品２</Link>
+            <Link route={productPageBuilder.route} match={{"page": "1"}} className={menuItem.link}>作品２</Link>
           </li>
           <li>
-            <Link route={productPageBuilder.route} match={{"page": "2"}} className={menuItem.anchor}>作品３</Link>
+            <Link route={productPageBuilder.route} match={{"page": "2"}} className={menuItem.link}>作品３</Link>
           </li>
         </ul>
       </details>
@@ -62,7 +62,7 @@ export const Introduction = () => {
     <>
       <div className={boundaryY}>
         {/* <h2 className={introduction.space}>何かいれたい</h2> */}
-        <img src={topImage} alt="トップイメージ画像" className={introduction.topPhoto} />
+        <img src={topImage} alt="トップイメージ画像" className={introduction.photo} />
       </div>
       <p className={`${introduction.catalyst} ${boundaryY}`}>{`${catalyst}`}</p>
     </>
@@ -139,7 +139,7 @@ export const Skill = () => {
             クラウド環境Google App Engineを使った開発を行いました。詳細は<Link route={productPageBuilder.route} match={{"page": "1"}} className={skill.link}>作品２</Link>で
           </dd>
           <dd>
-            Github：<a href="#" className={skill.link}>ソースコード</a>
+            Github：<a href="https://github.com/gensukeSpp/gae-image-post" className={skill.link}>ソースコード</a>
           </dd>
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
@@ -187,6 +187,19 @@ export const Skill = () => {
   );
 };
 
+const Footer = () => {
+
+  return (
+    <>
+      <h4 className={footer.h4contact}>CONTACT</h4>
+      mailto：　
+      <div className={footer.wrap}>
+        <p className={footer.copyright}>copyright © 2011 All Right Reserved.</p>
+      </div>
+    </>
+  )
+}
+
 export const TopPage = () => {
   return (
     <>
@@ -197,6 +210,7 @@ export const TopPage = () => {
       <Element name="skill">
         <Skill />
       </Element>
+      <Footer />
     </>
   );
 };

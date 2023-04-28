@@ -10,6 +10,7 @@ import { action, item, language, library } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
 import { NewKey, TopCaptureComponent } from './RetrieveCapture';
+import { ProductPageMenu } from './ProductPageRoute';
 
 /**
   * Element implicitly has an 'any' type because index expression is not of type 'number'
@@ -37,18 +38,19 @@ export const ProductComponent = (page: Prop) => {
   console.log(products);
 
   const key: keyof string = page.pageNum;
-  const newKey: NewKey = 0;
+  let newKey: NewKey;
 
   return (
     <>
       {products.map((product: Product, i) => {
         if (i === key)
           return (
-            <div key={i}>{i}:KEY={key}
+            <div key={i}>
+              <ProductPageMenu searchNumber={key} />
               {/* <img src={product.screen} alt={`${product.title}` + "のスクリーンショット"} /> */}
-              <TopCaptureComponent keyNumber={newKey} title={product.title} />
+              {<TopCaptureComponent keyNumber={newKey} title={product.title} />}
               <dl className={boundaryY}>
-                <dt className={item.title}>タイトル：{product.title}</dt>
+                <dt className={item.title}>{product.title}</dt>
                 <dd>制作・更新期間{product.term}</dd>
                 <dd>{product.presentation}</dd>
                   {product.language.map((lang, j) => {
@@ -62,7 +64,7 @@ export const ProductComponent = (page: Prop) => {
                                 <div key={k}>
                                   <dt className={library.name}>{lib.name}</dt>
                                   <dd className={library.description}>{lib.description}</dd>
-                                  <dl className={boundaryTop}>
+                                  <dl className={boundaryY}>
                                   {lib.action.map((act, l) => {
                                     //  ! is non-null assertion operator.
                                     // Otherwise callSource method can't return to be undefined potential.

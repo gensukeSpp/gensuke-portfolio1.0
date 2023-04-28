@@ -13,7 +13,7 @@ export const menuItem = {
     position: 'fixed',
     width: '76vw',
   }), 
-  anchor: style({
+  link: style({
     fontSize: '0.9rem',
     fontWeight: 'bold',
     textAlign: 'center',  
@@ -21,7 +21,7 @@ export const menuItem = {
 }
 
 export const introduction = {
-  topPhoto: style({
+  photo: style({
     objectFit: 'cover',
     aspectRatio: '16/9',
   }),
@@ -86,3 +86,19 @@ export const skill = {
     textDecoration: 'underline'
   })
 };
+
+export const footer = {
+  h4contact: style({
+    fontSize: '1.7rem',
+    fontWeight: 'bold'
+  }),
+  wrap: style({
+    backgroundColor: 'burlywood'
+  }),
+  copyright: style({
+    color: 'white',
+    fontSize: '0.75rem',
+    lineHeight: '4',
+    textAlign: 'center'
+  })
+}
