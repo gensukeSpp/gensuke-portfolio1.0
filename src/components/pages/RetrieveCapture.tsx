@@ -19,7 +19,7 @@ export type TopImageProp = {
 	title: string
 };
 
-export const TopCaptureComponent = (prop: TopImageProp) => {
+export const TopCaptureComponent: React.FC<{prop: TopImageProp}> = ({prop}) => {
 
 	return (
 		<div>

@@ -11,6 +11,7 @@ import { action, item, language, library } from './ProductPage.css';
 import { callSource } from './SourceContents';
 import { TopImageProp, TopCaptureComponent, TopImageKey } from './RetrieveCapture';
 import { ProductPageMenu } from './ProductPageRoute';
+import { ReactElement } from 'react-markdown/lib/react-markdown';
 
 /**
   * Element implicitly has an 'any' type because index expression is not of type 'number'
@@ -38,9 +39,10 @@ export const ProductComponent = (page: Prop) => {
   console.log(products);
 
   const key: keyof string = page.pageNum;
-  let newKey: TopImageKey;
-  const getNewKey = (loopInnerKey: number) => {
-    if(loopInnerKey === newKey) return loopInnerKey; 
+  let newKey: TopImageKey | JSX.Element;
+  const getNewKey = (loopInnerKey: number): TopImageKey => {
+    if(loopInnerKey === newKey) return loopInnerKey;
+    process.exit(1);
   }
 
   return (
