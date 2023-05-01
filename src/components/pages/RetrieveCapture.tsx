@@ -13,17 +13,17 @@ const property_type: {[key: number]: string} = {
 // type ImagePath = valueOf<typeof property_type>;
 type ImagePath = typeof property_type[keyof typeof property_type];
 */
-export type NewKey = 0 | 1;
-type Prop = {
-	keyNumber: NewKey,
+export type TopImageKey = 0 | 1 ;
+export type TopImageProp = {
+	imageKeyNumber: TopImageKey,
 	title: string
 };
 
-export const TopCaptureComponent = (prop: Prop) => {
+export const TopCaptureComponent = (prop: TopImageProp) => {
 
 	return (
 		<div>
-			<img src={captures[prop.keyNumber]} alt={prop.title + "のスクリーンショット"} />
+			<img src={captures[prop.imageKeyNumber]} alt={prop.title + "のスクリーンショット"} />
 		</div>
 	);
 }

@@ -9,7 +9,7 @@ import { boundaryY, boundaryTop, boundaryBottom } from '../sprinkles.boundary.cs
 import { action, item, language, library } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
-import { NewKey, TopCaptureComponent } from './RetrieveCapture';
+import { TopImageProp, TopCaptureComponent, TopImageKey } from './RetrieveCapture';
 import { ProductPageMenu } from './ProductPageRoute';
 
 /**
@@ -38,7 +38,10 @@ export const ProductComponent = (page: Prop) => {
   console.log(products);
 
   const key: keyof string = page.pageNum;
-  let newKey: NewKey;
+  let newKey: TopImageKey;
+  const getNewKey = (loopInnerKey: number) => {
+    if(loopInnerKey === newKey) return loopInnerKey; 
+  }
 
   return (
     <>
@@ -48,7 +51,7 @@ export const ProductComponent = (page: Prop) => {
             <div key={i}>
               <ProductPageMenu searchNumber={key} />
               {/* <img src={product.screen} alt={`${product.title}` + "のスクリーンショット"} /> */}
-              {<TopCaptureComponent keyNumber={newKey} title={product.title} />}
+              {newKey = getNewKey(key) && <TopCaptureComponent imageKeyNumber={newKey} title={product.title} />}
               <dl className={boundaryY}>
                 <dt className={item.title}>{product.title}</dt>
                 <dd>制作・更新期間{product.term}</dd>
