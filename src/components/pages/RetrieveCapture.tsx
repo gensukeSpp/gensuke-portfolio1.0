@@ -13,13 +13,18 @@ const property_type: {[key: number]: string} = {
 // type ImagePath = valueOf<typeof property_type>;
 type ImagePath = typeof property_type[keyof typeof property_type];
 */
-export type TopImageKey = 0 | 1 ;
-export type TopImageProp = {
+export type TopImageKey = 0 | 1;
+
+/*
+type TopImageProp = {
 	imageKeyNumber: TopImageKey,
 	title: string
 };
-
-export const TopCaptureComponent: React.FC<{prop: TopImageProp}> = ({prop}) => {
+const TopCaptureComponent = (prop: TopImageProp) -> no-correct
+*/
+// therefore ↓
+// https://stackoverflow.com/questions/55075740/property-does-not-exist-on-type-intrinsicattributes
+export const TopCaptureComponent = (prop: {imageKeyNumber: TopImageKey, title: string}) => {
 
 	return (
 		<div>

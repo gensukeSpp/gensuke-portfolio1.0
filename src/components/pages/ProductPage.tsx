@@ -9,9 +9,9 @@ import { boundaryY, boundaryTop, boundaryBottom } from '../sprinkles.boundary.cs
 import { action, item, language, library } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
-import { TopImageProp, TopCaptureComponent, TopImageKey } from './RetrieveCapture';
+import { TopCaptureComponent, TopImageKey } from './RetrieveCapture';
 import { ProductPageMenu } from './ProductPageRoute';
-import { ReactElement } from 'react-markdown/lib/react-markdown';
+// import { ReactElement } from 'react-markdown/lib/react-markdown';
 
 /**
   * Element implicitly has an 'any' type because index expression is not of type 'number'
@@ -26,6 +26,11 @@ const fetchData: Promise<Product[]> = fetch('http://my-json-server.typicode.com/
   res.json()
 );
 
+let newKey: TopImageKey;
+const getNewKey = (loopInnerKey: number): TopImageKey => {
+  newKey = loopInnerKey
+}
+
 export const ProductComponent = (page: Prop) => {
   const [products, setProducts] = React.useState<Product[]>([]);
 
@@ -39,21 +44,17 @@ export const ProductComponent = (page: Prop) => {
   console.log(products);
 
   const key: keyof string = page.pageNum;
-  let newKey: TopImageKey | JSX.Element;
-  const getNewKey = (loopInnerKey: number): TopImageKey => {
-    if(loopInnerKey === newKey) return loopInnerKey;
-    process.exit(1);
-  }
 
   return (
     <>
       {products.map((product: Product, i) => {
         if (i === key)
+          newKey = getNewKey(key);
           return (
             <div key={i}>
               <ProductPageMenu searchNumber={key} />
               {/* <img src={product.screen} alt={`${product.title}` + "のスクリーンショット"} /> */}
-              {newKey = getNewKey(key) && <TopCaptureComponent imageKeyNumber={newKey} title={product.title} />}
+              <TopCaptureComponent imageKeyNumber={newKey} title={product.title} />
               <dl className={boundaryY}>
                 <dt className={item.title}>{product.title}</dt>
                 <dd>制作・更新期間{product.term}</dd>
