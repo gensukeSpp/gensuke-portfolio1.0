@@ -27,8 +27,13 @@ const fetchData: Promise<Product[]> = fetch('http://my-json-server.typicode.com/
 );
 
 let newKey: TopImageKey;
-const getNewKey = (loopInnerKey: number): TopImageKey => {
-  newKey = loopInnerKey
+const getImageKey = (innerKeyNumber: number | TopImageKey) => {
+  const isImageKey = (innerKeyNumber: number): innerKeyNumber is TopImageKey => typeof innerKeyNumber === 'number';
+  if(isImageKey(innerKeyNumber)){
+    return innerKeyNumber;
+  } else {
+    throw new Error("None displayed image.");
+  }
 }
 
 export const ProductComponent = (page: Prop) => {
@@ -43,13 +48,14 @@ export const ProductComponent = (page: Prop) => {
   }, []);
   console.log(products);
 
-  const key: keyof string = page.pageNum;
+  const key/*: keyof string*/ = page.pageNum;
+  newKey = getImageKey(key);
+  console.log("key: " + key + "newKey: " + newKey);
 
   return (
     <>
       {products.map((product: Product, i) => {
         if (i === key)
-          newKey = getNewKey(key);
           return (
             <div key={i}>
               <ProductPageMenu searchNumber={key} />

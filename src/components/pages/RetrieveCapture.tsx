@@ -26,9 +26,15 @@ const TopCaptureComponent = (prop: TopImageProp) -> no-correct
 // https://stackoverflow.com/questions/55075740/property-does-not-exist-on-type-intrinsicattributes
 export const TopCaptureComponent = (prop: {imageKeyNumber: TopImageKey, title: string}) => {
 
-	return (
-		<div>
-			<img src={captures[prop.imageKeyNumber]} alt={prop.title + "のスクリーンショット"} />
-		</div>
-	);
+	if(prop.imageKeyNumber !== undefined){
+		return (
+			<div>
+				<img src={captures[prop.imageKeyNumber]} alt={prop.title + "のスクリーンショット"} />
+			</div>
+		);
+	} else {
+		return (
+			<div></div>
+		);
+	}
 }
