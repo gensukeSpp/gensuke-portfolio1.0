@@ -32,7 +32,7 @@ const getImageKey = (innerKeyNumber: number | TopImageKey) => {
   if(isImageKey(innerKeyNumber)){
     return innerKeyNumber;
   } else {
-    throw new Error("None displayed image.");
+    throw new Error("Image displayed None.");
   }
 }
 

@@ -39,19 +39,17 @@ export const library = {
 	name: style({
 		fontWeight: 'bold',
 		backgroundColor: 'lightpink',
-		borderRadius: '10%',
 		opacity: '0.8',
-		width: '60%',
+		width: '50%',
 		paddingLeft: '3%',
-		lineHeight: '2.5'
+		lineHeight: '2'
 	}),
 	description: style({
 		backgroundColor: 'aquamarine',
-		borderRadius: '10%',
 		opacity: '0.8',
 		width: '60%',
 		paddingLeft: '3%',
-		lineHeight: '2.5',
+		lineHeight: '2',
 		marginLeft: '3%'
 	})
 }

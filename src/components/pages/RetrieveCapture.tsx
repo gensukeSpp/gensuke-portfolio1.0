@@ -1,7 +1,7 @@
-import capture1 from '../../image/sunkit_cap1.png';
-import capture3 from '../../image/portfolio_cap3.png';
+import capture1 from '../../image/sunkit_top.png';
+import capture2 from '../../image/image-share_top.png';
 
-const captures = [capture1, capture3];
+const captures = [capture1, capture2];
 /*
 type valueOf<T> = T[keyof T];
 

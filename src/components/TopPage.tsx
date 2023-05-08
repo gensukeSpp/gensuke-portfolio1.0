@@ -194,7 +194,7 @@ const Footer = () => {
       <h4 className={footer.h4contact}>CONTACT</h4>
       mailto：　
       <div className={footer.wrap}>
-        <p className={footer.copyright}>copyright © 2011 All Right Reserved.</p>
+        <p className={footer.copyright}>copyright © 2023 All Right Reserved.</p>
       </div>
     </>
   )
