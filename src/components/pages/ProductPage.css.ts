@@ -14,6 +14,8 @@ export const menuLink = {
     width: '76vw',
   }),
 	link: style({
+		color: 'gray',
+		textDecoration: 'initial',
 		fontSize: '0.9rem',
     fontWeight: 'bold',
 	}),
@@ -36,21 +38,27 @@ export const language = {
 }
 
 export const library = {
-	name: style({
-		fontWeight: 'bold',
+	nameWrap: style({
 		backgroundColor: 'lightpink',
 		opacity: '0.8',
 		width: '50%',
 		paddingLeft: '3%',
 		lineHeight: '2'
 	}),
-	description: style({
+	name: style({
+		fontWeight: 'bold',
+		backgroundColor: 'white'
+	}),
+	descWrap: style({
 		backgroundColor: 'aquamarine',
 		opacity: '0.8',
 		width: '60%',
 		paddingLeft: '3%',
 		lineHeight: '2',
 		marginLeft: '3%'
+	}),
+	description: style({
+		backgroundColor: 'white'
 	})
 }
 
@@ -64,5 +72,16 @@ export const action = {
 	}),
 	source: style({
 		fontSize: '0.9rem'
+	})
+}
+
+export const actionMD = {
+	sImage1: style({
+		objectFit: 'contain',
+		width: 'inherit'
+	}),
+	sImage2: style({
+		objectFit: 'contain',
+		width: '50%'
 	})
 }

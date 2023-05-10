@@ -1,3 +1,7 @@
+import { actionMD } from './ProductPage.css';
+
+import sImage1 from '../../image/imgshare01.png';
+import sImage2 from '../../image/imgshare02.png';
 
 const source1: string =`
 
@@ -101,11 +105,17 @@ class ExplainArticle(ndb.Model):
 # 画像オブジェクトに付随する、説明文を呼び出す場合
 target_article = ImageBlobオブジェクト.getting()
 ~~~
+#### アップロードする画像を選択
+
+![画像を選択](${sImage1}){.${actionMD.sImage1}}
+#### 説明を入力
+
+![説明を入力](${sImage2}){.${actionMD.sImage2}}
 `;
 
 const source6: string =`
 
-https://qiita.com/wasnot/items/029b94bc7ba9f189e8d4に沿って、ある程度実装可能
+[こちら](https://qiita.com/wasnot/items/029b94bc7ba9f189e8d4)に沿って、ある程度実装可能
 
 ~~~python
 ログイン中かどうか、デコレータを作成

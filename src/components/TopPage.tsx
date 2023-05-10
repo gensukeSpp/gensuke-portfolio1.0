@@ -85,7 +85,7 @@ export const Skill = () => {
           <dd>レスポンシブ対応も可能です。</dd>
           <dd>
             就労支援トライズにて、訓練。
-            <a href="https://github.com/gensukeSpp/non-easy-responsive" className={skill.link}>課題１</a>
+            <a href="https://github.com/gensukeSpp/non-easy-responsive">課題１</a>
           </dd>
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
@@ -99,9 +99,9 @@ export const Skill = () => {
           <dd>CSSを階層化・変数や制御構文を用いることで開発効率を上げます。</dd>
           <dd>
             就労支援トライズにて、訓練。
-            <a href="https://github.com/gensukeSpp/sweets-shop" className={skill.link}>課題２</a>
-            <a href="https://github.com/gensukeSpp/unepiece" className={skill.link}>課題３</a>
-            <a href="https://github.com/gensukeSpp/hot-spring-kohun" className={skill.link}>課題４</a>
+            <a href="https://github.com/gensukeSpp/sweets-shop">課題２</a>
+            <a href="https://github.com/gensukeSpp/unepiece">課題３</a>
+            <a href="https://github.com/gensukeSpp/hot-spring-kohun">課題４</a>
           </dd>
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
@@ -113,7 +113,7 @@ export const Skill = () => {
             Javascript(jQuery,Node.js)
           </dt>
           <dd>
-            jQueryでサイトに動きをつけました。詳細は<Link route={productPageBuilder.route} match={{"page": "0"}} className={skill.link}>作品１</Link>で
+            jQueryでサイトに動きをつけました。詳細は<Link route={productPageBuilder.route} match={{"page": "0"}}>作品１</Link>で
           </dd>
           <dd>Expressでサーバサイドアプリを作ることができます。</dd>
         </dl>
@@ -136,10 +136,10 @@ export const Skill = () => {
             Python
           </dt>
           <dd>
-            クラウド環境Google App Engineを使った開発を行いました。詳細は<Link route={productPageBuilder.route} match={{"page": "1"}} className={skill.link}>作品２</Link>で
+            クラウド環境Google App Engineを使った開発を行いました。詳細は<Link route={productPageBuilder.route} match={{"page": "1"}}>作品２</Link>で
           </dd>
           <dd>
-            Github：<a href="https://github.com/gensukeSpp/gae-image-post" className={skill.link}>ソースコード</a>
+            Github：<a href="https://github.com/gensukeSpp/gae-image-post">ソースコード</a>
           </dd>
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>

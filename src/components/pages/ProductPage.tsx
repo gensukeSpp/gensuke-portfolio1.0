@@ -74,8 +74,8 @@ export const ProductComponent = (page: Prop) => {
                             {lang.library?.map((lib, k) => {
                               return (
                                 <div key={k}>
-                                  <dt className={library.name}>{lib.name}</dt>
-                                  <dd className={library.description}>{lib.description}</dd>
+                                  <dt className={library.nameWrap}><span className={library.name}>{lib.name}</span></dt>
+                                  <dd className={library.descWrap}><span className={library.description}>{lib.description}</span></dd>
                                   <dl className={boundaryY}>
                                   {lib.action.map((act, l) => {
                                     //  ! is non-null assertion operator.

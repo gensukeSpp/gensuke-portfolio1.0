@@ -10,7 +10,9 @@ globalStyle('html, body > #root', {
 });
 
 globalStyle('a', {
-  cursor: 'pointer',
+  color: 'blue',
+  textDecoration: 'underline',
+  cursor: 'pointer'
 });
 
 globalStyle('li', {

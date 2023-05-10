@@ -80,11 +80,11 @@ export const skill = {
     textUnderlineOffset: '-0.25rem',
     textDecorationSkipInk: 'none',
     textAlign: 'center'
-  }),
-  link: style({
-    color: 'blue',
-    textDecoration: 'underline'
   })
+  // link: style({
+  //   color: 'blue',
+  //   textDecoration: 'underline'
+  // })
 };
 
 export const footer = {
