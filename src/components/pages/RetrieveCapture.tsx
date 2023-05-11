@@ -1,3 +1,4 @@
+import { menuLink } from './ProductPage.css';
 import capture1 from '../../image/sunkit_top.png';
 import capture2 from '../../image/image-share_top.png';
 
@@ -29,7 +30,7 @@ export const TopCaptureComponent = (prop: {imageKeyNumber: TopImageKey, title: s
 	if(prop.imageKeyNumber !== undefined){
 		return (
 			<div>
-				<img src={captures[prop.imageKeyNumber]} alt={prop.title + "のスクリーンショット"} />
+				<img src={captures[prop.imageKeyNumber]} alt={prop.title + "のスクリーンショット"} className={menuLink.photo} />
 			</div>
 		);
 	} else {

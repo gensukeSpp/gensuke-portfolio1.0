@@ -30,10 +30,10 @@ const HeaderMenu = () => {
     //   </li>
     // </ul>
     <div className={menuItem.wrap}>
-      <ScrollLink to="intro" smooth={true} duration={500}>
+      <ScrollLink to="intro" smooth={true} duration={500} className={menuItem.link}>
         きっかけ
       </ScrollLink>
-      <ScrollLink to="skill" smooth={true} duration={500}>
+      <ScrollLink to="skill" smooth={true} duration={500} className={menuItem.link}>
         Skill
       </ScrollLink>
       <details style={{cursor: "pointer"}}>

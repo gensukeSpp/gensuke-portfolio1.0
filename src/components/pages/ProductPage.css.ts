@@ -38,27 +38,32 @@ export const language = {
 }
 
 export const library = {
-	nameWrap: style({
-		backgroundColor: 'lightpink',
-		opacity: '0.8',
-		width: '50%',
-		paddingLeft: '3%',
-		lineHeight: '2'
-	}),
 	name: style({
 		fontWeight: 'bold',
-		backgroundColor: 'white'
-	}),
-	descWrap: style({
-		backgroundColor: 'aquamarine',
-		opacity: '0.8',
-		width: '60%',
 		paddingLeft: '3%',
-		lineHeight: '2',
-		marginLeft: '3%'
+		"::before" : {
+			content: '',
+			backgroundColor: 'lightpink',
+			opacity: '0.8',
+			width: '1%',
+			height: '8vh',
+			marginRight: '3%',
+			display: 'inline-block',
+			verticalAlign: 'middle'
+		},
 	}),
 	description: style({
-		backgroundColor: 'white'
+		paddingLeft: '3%',
+		"::before" : {
+			content: '',
+			backgroundColor: 'aquamarine',
+			opacity: '0.8',
+			width: '1%',
+			height: '8vh',
+			marginRight: '3%',
+			display: 'inline-block',
+			verticalAlign: 'middle'
+		},
 	})
 }
 
@@ -72,16 +77,5 @@ export const action = {
 	}),
 	source: style({
 		fontSize: '0.9rem'
-	})
-}
-
-export const actionMD = {
-	sImage1: style({
-		objectFit: 'contain',
-		width: 'inherit'
-	}),
-	sImage2: style({
-		objectFit: 'contain',
-		width: '50%'
 	})
 }

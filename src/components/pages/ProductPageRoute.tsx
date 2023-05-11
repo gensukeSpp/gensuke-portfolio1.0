@@ -40,12 +40,12 @@ export const ProductPageMenu = (prop: Prop) => {
 	return (
 		<ul className={menuLink.wrap}>
 			<li>
-				<Link route={builder.route}>戻る</Link>
+				<Link route={builder.route} className={menuLink.link}>戻る</Link>
 			</li>
 			{necessaryPage.map((page) => {
 				return (
 				<li>
-					<Link route={productPageBuilder.route} match={{"page": page}}>{`作品${page}`}</Link>
+					<Link route={productPageBuilder.route} match={{"page": page}} className={menuLink.link}>{`作品${page}`}</Link>
 				</li>
 				);
 			})}

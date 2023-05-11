@@ -14,9 +14,8 @@ export const menuItem = {
     width: '76vw',
   }), 
   link: style({
-    fontSize: '0.9rem',
+		textDecoration: 'initial',
     fontWeight: 'bold',
-    textAlign: 'center',  
   })
 }
 

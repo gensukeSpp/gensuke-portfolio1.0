@@ -1,5 +1,3 @@
-import { actionMD } from './ProductPage.css';
-
 import sImage1 from '../../image/imgshare01.png';
 import sImage2 from '../../image/imgshare02.png';
 
@@ -107,10 +105,10 @@ target_article = ImageBlobオブジェクト.getting()
 ~~~
 #### アップロードする画像を選択
 
-![画像を選択](${sImage1}){.${actionMD.sImage1}}
+![画像を選択](${sImage1} "fig01")
 #### 説明を入力
 
-![説明を入力](${sImage2}){.${actionMD.sImage2}}
+![説明を入力](${sImage2} "fig02")
 `;
 
 const source6: string =`

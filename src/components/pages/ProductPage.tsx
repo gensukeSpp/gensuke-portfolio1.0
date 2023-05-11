@@ -11,7 +11,8 @@ import { action, item, language, library } from './ProductPage.css';
 import { callSource } from './SourceContents';
 import { TopCaptureComponent, TopImageKey } from './RetrieveCapture';
 import { ProductPageMenu } from './ProductPageRoute';
-// import { ReactElement } from 'react-markdown/lib/react-markdown';
+
+import './capture.css';
 
 /**
   * Element implicitly has an 'any' type because index expression is not of type 'number'
@@ -74,8 +75,8 @@ export const ProductComponent = (page: Prop) => {
                             {lang.library?.map((lib, k) => {
                               return (
                                 <div key={k}>
-                                  <dt className={library.nameWrap}><span className={library.name}>{lib.name}</span></dt>
-                                  <dd className={library.descWrap}><span className={library.description}>{lib.description}</span></dd>
+                                  <dt className={library.name}>{lib.name}</dt>
+                                  <dd className={library.description}>{lib?.description}</dd>
                                   <dl className={boundaryY}>
                                   {lib.action.map((act, l) => {
                                     //  ! is non-null assertion operator.
