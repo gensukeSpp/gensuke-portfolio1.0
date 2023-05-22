@@ -30,7 +30,7 @@ type Prop = {
 
 export const ProductPageMenu = (prop: Prop) => {
 	// const searchNum = window.location.search;
-	let productPageArray: (string | null)[] = ["0", "1", "2"];
+	let productPageArray: (string | null)[] = ["1", "2", "3"];
 	productPageArray[prop.searchNumber] = null;
 
 	const necessaryPage = productPageArray.flatMap((productPage) => {

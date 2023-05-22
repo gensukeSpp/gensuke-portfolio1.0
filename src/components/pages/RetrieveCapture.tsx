@@ -3,15 +3,15 @@ import capture1 from '../../image/sunkit_top.png';
 import capture2 from '../../image/image-share_top.png';
 
 const captures = [capture1, capture2];
+
+// const property_type: {[key: number]: string} = {
+// 	0: capture1,
+// 	1: capture2
+// } as const;
 /*
 type valueOf<T> = T[keyof T];
-
-const property_type: {[key: number]: string} = {
-	0: capture1,
-	1: capture3
-} as const;
-
-// type ImagePath = valueOf<typeof property_type>;
+type ImagePath = valueOf<typeof property_type>;
+同義↓
 type ImagePath = typeof property_type[keyof typeof property_type];
 */
 export type TopImageKey = 0 | 1;

@@ -1,5 +1,11 @@
+// import ReactMarkdown from 'react-markdown';
+// import remarkGfm from 'remark-gfm';
 import sImage1 from '../../image/imgshare01.png';
 import sImage2 from '../../image/imgshare02.png';
+import sImage4 from '../../image/imgshare04.png';
+import sImage5 from '../../image/imgshare05.png';
+import sImage6 from '../../image/sunkit01.png';
+import sImage7 from '../../image/sunkit02.png';
 
 const source1: string =`
 
@@ -62,8 +68,6 @@ const source4: string = `
 /*
 * モーダルウィンドウに対応した、シングルトンパターン
 */
-SingletonTagModule関数
-
 // 公開されない機能
 var instance;
 return {
@@ -77,12 +81,21 @@ return {
 	}
 };
 
-SingletonTagModuleの利用
-	$モーダルウィンドウにしたい画像エレメント.on("click", function(e){
-		/* タグの生成を一度だけにしたクラスのインスタンス */
-		var st = SingletonTagModule.getInstance(...);
-		// モーダルウィンドウ表示処理
-		...
+$モーダルウィンドウにしたい画像エレメント.on("click", function(e){
+	/* タグの生成を一度だけにしたクラスのインスタンス */
+	var st = SingletonTagModule.getInstance(...);
+	// モーダルウィンドウ表示処理
+	...
+`;
+
+const source11: string =`
+
+![症状をチェック](${sImage6} "fig06")
+
+#### 体質とおススメ商品が表示！
+
+![体質とお勧め商品が表示](${sImage7} "fig07")
+
 `;
 
 const source5: string =`
@@ -100,7 +113,7 @@ class ExplainArticle(ndb.Model):
 	blob_key = ndb.KeyProperty(kind=ImageBlob)
 
 
-# 画像オブジェクトに付随する、説明文を呼び出す場合
+# 画像オブジェクトに紐付けされた、説明文を呼び出す場合
 target_article = ImageBlobオブジェクト.getting()
 ~~~
 #### アップロードする画像を選択
@@ -109,6 +122,20 @@ target_article = ImageBlobオブジェクト.getting()
 #### 説明を入力
 
 ![説明を入力](${sImage2} "fig02")
+`;
+
+const source12: string =`
+
+#### （管理者ユーザーのみ、操作可能）
+
+![番号をコピーペースト](${sImage4} "fig04")
+
+つながるボタンをクリック
+
+#### つながったメンバーの画像が表示！
+
+![つながったメンバーの画像が表示](${sImage5} "fig05")
+
 `;
 
 const source6: string =`
@@ -177,7 +204,7 @@ return (
 
 const source9: string =`
 
-https://www.copycat.dev/blog/react-markdown/を参照
+こちら https://www.copycat.dev/blog/react-markdown/ を参考
 
 ~~~javascript
 // 以下コンポーネントより、シンタックスハイライト表現を実現
@@ -253,6 +280,10 @@ export const callSource = (no: string): string => {
 			return source9;
 		case "10":
 			return source10;
+		case "11":
+			return source11;
+		case "12":
+			return source12;
 		// 以下がなければ、Function lacks ending return statement and return type does not include 'undefined'.
 		default:
 			throw new Error("Nothing number");

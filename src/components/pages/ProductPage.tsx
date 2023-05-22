@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
-// import remarkGfm from 'remark-gfm';
+import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 
@@ -91,6 +91,7 @@ export const ProductComponent = (page: Prop) => {
                                         <ReactMarkdown
                                           className={action.source}
                                           children={caller}
+                                          remarkPlugins={[remarkGfm]}
                                           components={{
                                             code({ node, inline, className, children, style, ...props }: CodeProps) {
                                               const match = /language-(\w+)/.exec(className || "");

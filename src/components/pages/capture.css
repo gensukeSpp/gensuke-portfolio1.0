@@ -6,3 +6,14 @@ img[title*="fig02"]{
     object-fit: contain;
     width: 60%;
 }
+img[title*="fig04"]{
+    border: inset 4px silver;
+}
+img[title*="fig05"]{
+    object-fit: contain;
+    width: 70%;
+}
+img[title*="fig07"]{
+    object-fit: contain;
+    width: 60%;
+}
