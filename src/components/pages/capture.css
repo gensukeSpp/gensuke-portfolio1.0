@@ -1,13 +1,13 @@
 img[title*="fig01"]{
     object-fit: contain;
-    width: 30%;
+    width: 40%;
 }
 img[title*="fig02"]{
     object-fit: contain;
-    width: 60%;
+    width: 70%;
 }
 img[title*="fig04"]{
-    border: inset 4px silver;
+    border: solid 4px silver;
 }
 img[title*="fig05"]{
     object-fit: contain;

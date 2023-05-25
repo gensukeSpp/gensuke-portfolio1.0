@@ -6,7 +6,7 @@ import { CodeProps } from "react-markdown/lib/ast-to-react";
 
 import { Library, Product } from './portfolio_type';
 import { boundaryY, boundaryTop, boundaryBottom } from '../sprinkles.boundary.css';
-import { action, item, language, library } from './ProductPage.css';
+import { action, actionChildH4, item, language, library } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
 import { TopCaptureComponent, TopImageKey } from './RetrieveCapture';

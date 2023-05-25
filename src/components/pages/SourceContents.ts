@@ -143,8 +143,8 @@ const source6: string =`
 [こちら](https://qiita.com/wasnot/items/029b94bc7ba9f189e8d4)に沿って、ある程度実装可能
 
 ~~~python
-ログイン中かどうか、デコレータを作成
-以降@user_requiredをdef前に付与することで、ログインされていること前提の処理が加えられる
+# ログイン中かどうか、デコレータを作成
+# 以降@user_requiredをdef前に付与することで、ログインされていること前提の処理が加えられる
 def user_required(handler):
 	def check_login(self, *args):
 		if not auth.get_user_by_session():
