@@ -1,9 +1,9 @@
 import { menuLink } from './ProductPage.css';
 import capture1 from '../../image/sunkit_top.png';
 import capture2 from '../../image/image-share_top.png';
+import { boundaryY } from '../sprinkles.boundary.css';
 
 const captures = [capture1, capture2];
-
 // const property_type: {[key: number]: string} = {
 // 	0: capture1,
 // 	1: capture2
@@ -27,9 +27,10 @@ const TopCaptureComponent = (prop: TopImageProp) -> no-correct
 // https://stackoverflow.com/questions/55075740/property-does-not-exist-on-type-intrinsicattributes
 export const TopCaptureComponent = (prop: {imageKeyNumber: TopImageKey, title: string}) => {
 
-	if(prop.imageKeyNumber !== undefined){
+	if(typeof prop.imageKeyNumber){
+		console.log("0か1: " + typeof prop.imageKeyNumber);
 		return (
-			<div>
+			<div className={boundaryY}>
 				<img src={captures[prop.imageKeyNumber]} alt={prop.title + "のスクリーンショット"} className={menuLink.photo} />
 			</div>
 		);

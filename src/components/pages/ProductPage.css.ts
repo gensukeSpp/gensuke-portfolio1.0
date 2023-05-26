@@ -72,18 +72,7 @@ export const action = {
 		display: 'inline-block',
 		borderBottom: 'double'
 	}),
-	explain: style({
-		paddingTop: '3%'
-	}),
 	source: style({
+		fontSize: '0.9rem'
 	})
-}
-
-export const actionChildH4 = {
-	selectors: {
-		[`${action.source} & > h4`]: {
-			fontWeight: 'bold',
-			paddingTop: '3%'
-		}
-	}
 }

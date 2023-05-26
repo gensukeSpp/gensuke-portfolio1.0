@@ -31,7 +31,7 @@ const HeaderMenu = () => {
     // </ul>
     <div className={menuItem.wrap}>
       <ScrollLink to="intro" smooth={true} duration={500} className={menuItem.link}>
-        きっかけ
+        プロフィール
       </ScrollLink>
       <ScrollLink to="skill" smooth={true} duration={500} className={menuItem.link}>
         Skill
@@ -54,22 +54,42 @@ const HeaderMenu = () => {
   )
 }
 
-const catalyst: string =
-  '大学時代の終わり頃、古いパソコン処分しようとしましたが、レポートを作る、メールをするくらいしか使用しておらず、もったいないと思い、OSをWindowsからUNIX系OSに入れ替えました。それがきっかけでパソコンの構造など知る機会となり、メモリの増設、LANを組んだことから、さらにパソコンについての知識を深めようと思い、現在まで至ります。';
-
-export const Introduction = () => {
+const TopImageComp = () => {
   return (
     <>
       <div className={boundaryY}>
         {/* <h2 className={introduction.space}>何かいれたい</h2> */}
-        <img src={topImage} alt="トップイメージ画像" className={introduction.photo} />
+        <img src={topImage} alt="トップ画像" className={introduction.photo} />
       </div>
+      <h2>※随時改良中</h2>
+    </>
+  );
+}
+
+const catalyst: string =
+  '大学時代の終わり頃、古いパソコン処分しようとしましたが、レポートを作る、メールをするくらいしか使用しておらず、もったいないと思い、OSをWindowsからUNIX系OSに入れ替えました。それがきっかけでパソコンの構造など知る機会となり、メモリの増設、LANを組んだことから、さらにパソコンについての知識を深めようと思い、現在まで至ります。';
+
+const myProfile1: string = 
+  '2011年　精神障害者手帳3級：アスペルガー症候群、ADHD（2016年?）';
+
+const myProfile2: string =
+  '2015～2018年　就労継続支援A型事業所、株式会社ファンクリエイションにて、コーダーとして従事。';
+
+const myProfile3: string =
+  '当時企業、事業所様のWebページを、デザイン班からのデザインカンプをもとにHTML、CSS、Smarty(PHP)、WordPressにて制作、空き時間で、かねてから勉強中のPythonで、Google Cloud Platform上のアプリケーションを制作。';
+
+const Introduction = () => {
+  return (
+    <>
       <p className={`${introduction.catalyst} ${boundaryY}`}>{`${catalyst}`}</p>
+      <p className={boundaryBottom}>{`${myProfile1}`}</p>
+      <p className={boundaryBottom}>{`${myProfile2}`}</p>
+      <p className={boundaryBottom}>{`${myProfile3}`}</p>
     </>
   );
 };
 
-export const Skill = () => {
+const Skill = () => {
   return (
     <>
       <h4 className={`${skill.h4skill} ${boundaryTop}`}>Skill</h4>
@@ -110,7 +130,7 @@ export const Skill = () => {
               underBarColors: 'programming',
             })}`}
           >
-            Javascript(jQuery,Node.js)
+            javascript(jQuery,Node.js)
           </dt>
           <dd>
             jQueryでサイトに動きをつけました。詳細は<Link route={productPageBuilder.route} match={{"page": "0"}}>作品１</Link>で
@@ -192,7 +212,7 @@ const Footer = () => {
   return (
     <>
       <h4 className={footer.h4contact}>CONTACT</h4>
-      mailto：　
+      mailto：　win_mint.7v903@outlook.jp
       <div className={footer.wrap}>
         <p className={footer.copyright}>copyright © 2023 All Right Reserved.</p>
       </div>
@@ -204,6 +224,7 @@ export const TopPage = () => {
   return (
     <>
       <HeaderMenu />
+      <TopImageComp />
       <Element name="intro">
         <Introduction />
       </Element>

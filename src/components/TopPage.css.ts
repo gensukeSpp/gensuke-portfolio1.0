@@ -26,7 +26,7 @@ export const introduction = {
   }),
   catalyst: style({
     fontSize: '0.9rem',
-  }),
+  })
 };
 
 // const themeVars = createGlobalTheme("", {

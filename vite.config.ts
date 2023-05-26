@@ -11,9 +11,6 @@ export default defineConfig({
   plugins: [vanillaExtractPlugin(), reactRefresh(), viteReactJsx(), tsconfigPaths()],
   build: {
     chunkSizeWarningLimit: 100000000
-    // watch: {
-    //   include: 'src/**'
-    // }
   },
   server: {
     fs: {

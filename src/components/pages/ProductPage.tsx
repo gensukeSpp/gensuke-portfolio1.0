@@ -6,7 +6,7 @@ import { CodeProps } from "react-markdown/lib/ast-to-react";
 
 import { Library, Product } from './portfolio_type';
 import { boundaryY, boundaryTop, boundaryBottom } from '../sprinkles.boundary.css';
-import { action, actionChildH4, item, language, library } from './ProductPage.css';
+import { action, item, language, library } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
 import { TopCaptureComponent, TopImageKey } from './RetrieveCapture';
@@ -28,8 +28,8 @@ const fetchData: Promise<Product[]> = fetch('http://my-json-server.typicode.com/
 );
 
 let newKey: TopImageKey;
-const getImageKey = (innerKeyNumber: number | TopImageKey) => {
-  const isImageKey = (innerKeyNumber: number): innerKeyNumber is TopImageKey => typeof innerKeyNumber === 'number';
+const getImageKey = (innerKeyNumber: number): TopImageKey => {
+  const isImageKey = (innerKeyNumber: number): boolean => typeof innerKeyNumber === 'number';
   if(isImageKey(innerKeyNumber)){
     return innerKeyNumber;
   } else {
@@ -51,7 +51,7 @@ export const ProductComponent = (page: Prop) => {
 
   const key/*: keyof string*/ = page.pageNum;
   newKey = getImageKey(key);
-  console.log("key: " + key + "newKey: " + newKey);
+  console.log("key: " + key + " newKey: " + newKey);
 
   return (
     <>
@@ -84,9 +84,9 @@ export const ProductComponent = (page: Prop) => {
                                     // const caller = callSource(act.source)!;
                                     const caller = callSource(act.source);
                                     return (
-                                      <div key={l} className={boundaryBottom}>
-                                        <dd className={action.summary}>{act.summary}</dd>
-                                        <dd className={action.explain}>{act.explanation}</dd>
+                                      <div key={l}>
+                                        <dd className={`${action.summary} ${boundaryTop}`}>{act.summary}</dd>
+                                        <dd className={boundaryY}>{act.explanation}</dd>
                                         {/* From https://www.copycat.dev/blog/react-markdown/ */}
                                         <ReactMarkdown
                                           className={action.source}

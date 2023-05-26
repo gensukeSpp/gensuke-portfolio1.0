@@ -112,13 +112,14 @@ class ExplainArticle(ndb.Model):
 	...
 	blob_key = ndb.KeyProperty(kind=ImageBlob)
 
-
 # 画像オブジェクトに紐付けされた、説明文を呼び出す場合
 target_article = ImageBlobオブジェクト.getting()
 ~~~
+
 #### アップロードする画像を選択
 
 ![画像を選択](${sImage1} "fig01")
+
 #### 説明を入力
 
 ![説明を入力](${sImage2} "fig02")
@@ -129,7 +130,6 @@ const source12: string =`
 #### （管理者ユーザーのみ、操作可能）
 
 ![番号をコピーペースト](${sImage4} "fig04")
-
 つながるボタンをクリック
 
 #### つながったメンバーの画像が表示！
