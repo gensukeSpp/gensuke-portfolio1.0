@@ -16,14 +16,6 @@ const builder = Rocon.Root({
 // 	return useRoutes(builder);
 // };
 
-/*
-type ProductPageType = "0" | "1" | "2";
-
-let omitNum: string;
-type OmitPageIfSearch<T extends (string | null)> = T extends typeof omitNum ? null : T;
-type MenuItemArray = OmitPageIfSearch<ProductPageType>;
-*/
-
 type Prop = {
 	searchNumber: number
 }

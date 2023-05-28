@@ -9,7 +9,7 @@ import { boundaryY, boundaryTop, boundaryBottom } from '../sprinkles.boundary.cs
 import { action, item, language, library } from './ProductPage.css';
 
 import { callSource } from './SourceContents';
-import { TopCaptureComponent, TopImageKey } from './RetrieveCapture';
+import { TopCaptureComponent } from './RetrieveCapture';
 import { ProductPageMenu } from './ProductPageRoute';
 
 import './capture.css';
@@ -27,15 +27,6 @@ const fetchData: Promise<Product[]> = fetch('http://my-json-server.typicode.com/
   res.json()
 );
 
-let newKey: TopImageKey;
-const getImageKey = (innerKeyNumber: number): TopImageKey => {
-  const isImageKey = (innerKeyNumber: number): boolean => typeof innerKeyNumber === 'number';
-  if(isImageKey(innerKeyNumber)){
-    return innerKeyNumber;
-  } else {
-    throw new Error("Image displayed None.");
-  }
-}
 
 export const ProductComponent = (page: Prop) => {
   const [products, setProducts] = React.useState<Product[]>([]);
@@ -50,8 +41,6 @@ export const ProductComponent = (page: Prop) => {
   console.log(products);
 
   const key/*: keyof string*/ = page.pageNum;
-  newKey = getImageKey(key);
-  console.log("key: " + key + " newKey: " + newKey);
 
   return (
     <>
@@ -61,7 +50,7 @@ export const ProductComponent = (page: Prop) => {
             <div key={i}>
               <ProductPageMenu searchNumber={key} />
               {/* <img src={product.screen} alt={`${product.title}` + "のスクリーンショット"} /> */}
-              <TopCaptureComponent imageKeyNumber={newKey} title={product.title} />
+              <TopCaptureComponent pageCount={key} title={product.title} />
               <dl className={boundaryY}>
                 <dt className={item.title}>{product.title}</dt>
                 <dd>制作・更新期間{product.term}</dd>
