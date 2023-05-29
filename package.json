@@ -9,7 +9,8 @@
         "serve": "vite preview",
         "prepare": "husky install",
         "rebuild": "vite build && rm -R docs && cp -r dist docs",
-        "git": "git add . && git commit && git push origin main"
+        "git": "git add . && git commit && git push origin main",
+        "deploy": "gh-pages -d dist"
     },
     "dependencies": {
         "@vanilla-extract/css": "^1.10.0",
