@@ -7,6 +7,9 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: process.env.GITHUB_PAGES  // この行を追加
+    ? "xue.hr3a-portfolio"            // この行を追加
+    : "./",                     // この行を追加
   // NOTE: vanillaExtractPlugin is placed after reactRefresh and before the others.
   plugins: [vanillaExtractPlugin(), reactRefresh(), viteReactJsx(), tsconfigPaths()],
   build: {
