@@ -92,6 +92,7 @@ const source11: string =`
 
 ![症状をチェック](${sImage6} "fig06")
 
+&nbsp;
 #### 体質とおススメ商品が表示！
 
 ![体質とお勧め商品が表示](${sImage7} "fig07")
@@ -120,9 +121,12 @@ target_article = ImageBlobオブジェクト.getting()
 
 ![画像を選択](${sImage1} "fig01")
 
+&nbsp;
 #### 説明を入力
 
 ![説明を入力](${sImage2} "fig02")
+
+#### 登録
 `;
 
 const source12: string =`
@@ -130,12 +134,13 @@ const source12: string =`
 #### （管理者ユーザーのみ、操作可能）
 
 ![番号をコピーペースト](${sImage4} "fig04")
+
 つながるボタンをクリック
 
+&nbsp;
 #### つながったメンバーの画像が表示！
 
 ![つながったメンバーの画像が表示](${sImage5} "fig05")
-
 `;
 
 const source6: string =`
@@ -224,6 +229,16 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 ~~~
 `;
 
+const source13: string =`
+
++ fetchしたjsonデータが、バケツリレーなので何とかしたい
++ CONTACTをフォームにする
+	+ Atomic Designに沿った開発
+		+ 管理がしやすく、Storybook、テストにつなげやすい
+
+&nbsp;
+`;
+
 const source10: string =`
 
 ~~~javascript
@@ -284,6 +299,8 @@ export const callSource = (no: string): string => {
 			return source11;
 		case "12":
 			return source12;
+		// case "13":
+		// 	return source13;	
 		// 以下がなければ、Function lacks ending return statement and return type does not include 'undefined'.
 		default:
 			throw new Error("Nothing number");

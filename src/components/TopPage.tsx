@@ -191,6 +191,7 @@ const Skill = () => {
             Docker
           </dt>
           <dd>基礎的なDockerfile、docker-composeを用いた仮想環境を構築することができます。</dd>
+          <dd>Zenn.devに<a href="https://zenn.dev/gensuke_spp/articles/2f6aad01c07240">記事</a>を書きました。</dd>
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
@@ -212,7 +213,7 @@ const Footer = () => {
   return (
     <>
       <h4 className={footer.h4contact}>CONTACT</h4>
-      mailto：　win_mint.7v903@outlook.jp
+      <a href="mailto:win_mint.7v903@outlook.jp">こちらへ</a>
       <div className={footer.wrap}>
         <p className={footer.copyright}>copyright © 2023 All Right Reserved.</p>
       </div>

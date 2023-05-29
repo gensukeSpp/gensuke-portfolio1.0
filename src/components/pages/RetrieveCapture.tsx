@@ -1,7 +1,7 @@
 import { menuLink } from './ProductPage.css';
+import { boundaryY } from '../sprinkles.boundary.css';
 import capture1 from '../../image/sunkit_top.png';
 import capture2 from '../../image/image-share_top.png';
-import { boundaryY } from '../sprinkles.boundary.css';
 
 const captures = [capture1, capture2];
 
