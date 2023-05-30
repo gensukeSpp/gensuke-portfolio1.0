@@ -12,5 +12,5 @@ export const productPageBuilder = topLevelRoutes._.products
   .action(({page}) => <ProductComponent pageNum={Number(page)} />);
 
 export const Routes = () => {
-  return useRoutes(topLevelRoutes);
+  return useRoutes(productPageBuilder);
 };
