@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import react from "@vitejs/plugin-react";
 import reactRefresh from '@vitejs/plugin-react-refresh';
 import viteReactJsx from 'vite-react-jsx';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -11,8 +12,8 @@ export default defineConfig({
      ? "/xue.hr3a-portfolio/"            // この行を追加
      : "./",                     // この行を追加
   // base: "/",
+  plugins: [vanillaExtractPlugin(), react(), reactRefresh(), viteReactJsx(), tsconfigPaths()],
   // NOTE: vanillaExtractPlugin is placed after reactRefresh and before the others.
-  plugins: [vanillaExtractPlugin(), reactRefresh(), viteReactJsx(), tsconfigPaths()],
   build: {
     chunkSizeWarningLimit: 100000000
   },

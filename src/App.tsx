@@ -1,4 +1,3 @@
-import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { RoconRoot } from 'rocon/react';
 import { Routes } from '~/components/Routes';
