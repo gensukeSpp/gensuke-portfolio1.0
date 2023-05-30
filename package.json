@@ -2,7 +2,7 @@
     "version": "0.0.0",
     "name": "my-portfolio1.0",
     "license": "MIT",
-    "homepage": "https://gensukespp.github.io/xue.hr3a-portfolio",
+    "homepage": "https://gensukespp.github.io/xue.hr3a-portfolio/",
     "scripts": {
         "dev": "vite --port 20080",
         "build": "tsc && vite build",
