@@ -23,7 +23,7 @@ type Prop = {
   [pageNum: string]: number
 }
 
-const fetchData: Promise<Product[]> = fetch('http://my-json-server.typicode.com/gensukeSpp/sunkit-portfolio/products').then((res) =>
+const fetchData: Promise<Product[]> = fetch('https://my-json-server.typicode.com/gensukeSpp/sunkit-portfolio/products').then((res) =>
   res.json()
 );
 
