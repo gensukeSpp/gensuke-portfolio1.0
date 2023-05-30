@@ -2,13 +2,13 @@
     "version": "0.0.0",
     "name": "my-portfolio1.0",
     "license": "MIT",
-    "homepage": "https://gennsukespp.github.io/xue.hr3a-portfolio",
+    "homepage": "https://gensukespp.github.io/xue.hr3a-portfolio",
     "scripts": {
         "dev": "vite --port 20080",
         "build": "tsc && vite build",
         "serve": "vite preview",
         "prepare": "husky install",
-        "rebuild": "vite build && rm -R docs && cp -r dist docs",
+        "rebuild": "vite build && cp -r dist docs",
         "git": "git add . && git commit && git push origin main",
         "deploy": "gh-pages -d dist"
     },

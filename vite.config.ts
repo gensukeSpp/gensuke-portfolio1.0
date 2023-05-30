@@ -8,11 +8,12 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // base: "/xue.hr3a-portfolio/",
   base: process.env.GITHUB_PAGES  // この行を追加
      ? "/xue.hr3a-portfolio/"            // この行を追加
      : "./",                     // この行を追加
   // base: "/",
-  plugins: [vanillaExtractPlugin(), react(), reactRefresh(), viteReactJsx(), tsconfigPaths()],
+  plugins: [vanillaExtractPlugin(), reactRefresh(), viteReactJsx(), tsconfigPaths()],
   // NOTE: vanillaExtractPlugin is placed after reactRefresh and before the others.
   build: {
     chunkSizeWarningLimit: 100000000
