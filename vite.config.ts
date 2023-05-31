@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import react from "@vitejs/plugin-react";
 import reactRefresh from '@vitejs/plugin-react-refresh';
 import viteReactJsx from 'vite-react-jsx';
 import tsconfigPaths from 'vite-tsconfig-paths';
