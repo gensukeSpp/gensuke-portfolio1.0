@@ -3,12 +3,12 @@ import { Rocon, Link } from 'rocon/react';
 import { productPageBuilder } from '../Routes';
 import { menuLink } from './ProductPage.css';
 
-const builder = Rocon.Root({
-	root: {
-		pathname: "/",
-		state: null
-	}
-})
+// const builder = Rocon.Root({
+// 	root: {
+// 		pathname: "/",
+// 		state: null
+// 	}
+// });
   // .routes({top: {action: (() => <TopPage />)}});
 	// .exact({action: () => <TopPage /> });
 
@@ -31,9 +31,9 @@ export const ProductPageMenu = (prop: Prop) => {
 
 	return (
 		<ul className={menuLink.wrap}>
-			<li>
+			{/* <li>
 				<Link route={builder.route} className={menuLink.link}>戻る</Link>
-			</li>
+			</li> */}
 			{necessaryPage.map((page) => {
 				return (
 				<li>
