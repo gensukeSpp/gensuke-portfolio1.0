@@ -3,9 +3,12 @@ import { TopPage } from '~/components/TopPage';
 import { ProductComponent } from './pages/ProductPage';
 
 const topLevelRoutes = Rocon.Path()
-  .exact({ action: () => <TopPage /> })
-  // .route("sunkit", (route) => route.action(() => <ProductPage page={page} />)
-  .route("products");
+  .routes({
+    foo: {
+      action: () => <TopPage />
+    },
+    products: {}
+  });
 
 export const productPageBuilder = topLevelRoutes._.products
   .attach(Rocon.Search("page"))
