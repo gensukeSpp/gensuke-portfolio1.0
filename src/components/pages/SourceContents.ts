@@ -299,8 +299,8 @@ export const callSource = (no: string): string => {
 			return source11;
 		case "12":
 			return source12;
-		// case "13":
-		// 	return source13;	
+		case "13":
+			return source13;	
 		// 以下がなければ、Function lacks ending return statement and return type does not include 'undefined'.
 		default:
 			throw new Error("Nothing number");
