@@ -5,8 +5,7 @@
     "scripts": {
         "dev": "vite --port 20080",
         "build": "tsc && vite build",
-        "serve": "vite preview",
-        "prepare": "husky install"
+        "serve": "vite preview"
     },
     "dependencies": {
         "@vanilla-extract/css": "^1.10.0",
