@@ -229,16 +229,6 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 ~~~
 `;
 
-const source13: string =`
-
-+ fetchしたjsonデータが、バケツリレーなので何とかしたい
-+ CONTACTをフォームにする
-	+ Atomic Designに沿った開発
-		+ 管理がしやすく、Storybook、テストにつなげやすい
-
-&nbsp;
-`;
-
 const source10: string =`
 
 ~~~javascript
@@ -299,8 +289,6 @@ export const callSource = (no: string): string => {
 			return source11;
 		case "12":
 			return source12;
-		case "13":
-			return source13;	
 		// 以下がなければ、Function lacks ending return statement and return type does not include 'undefined'.
 		default:
 			throw new Error("Nothing number");
