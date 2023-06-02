@@ -1,9 +1,10 @@
 import { Rocon, useRoutes } from 'rocon/react';
-import { TopPage } from '~/components/TopPage';
+
 import { ProductComponent } from './pages/ProductPage';
+import { HomePageTemp } from './templates/HomePage';
 
 const topLevelRoutes = Rocon.Path()
-  .exact({ action: () => <TopPage /> })
+  .exact({ action: () => <HomePageTemp /> })
   // .route("sunkit", (route) => route.action(() => <ProductPage page={page} />)
   .route("products");
 

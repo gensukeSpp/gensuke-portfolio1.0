@@ -101,6 +101,25 @@ const source11: string =`
 
 const source5: string =`
 
+- SammoHung: projectA1
+- Jacky: projectA2
+- YuenBiao: projectA3
+で、ログインできます。
+
+Jackyは、SammoHung、YuenBiaoとつながってますので、2人の画像を閲覧することができます。
+SammoHung、YuenBiaoはJackyの画像を見ることができます。
+
+#### アップロードする画像を選択
+
+![画像を選択](${sImage1} "fig01")
+
+&nbsp;
+#### 説明を入力
+
+![説明を入力](${sImage2} "fig02")
+
+#### 登録
+
 ~~~python
 class ImageBlob(ndb.Model):
 	...
@@ -116,22 +135,12 @@ class ExplainArticle(ndb.Model):
 # 画像オブジェクトに紐付けされた、説明文を呼び出す場合
 target_article = ImageBlobオブジェクト.getting()
 ~~~
-
-#### アップロードする画像を選択
-
-![画像を選択](${sImage1} "fig01")
-
-&nbsp;
-#### 説明を入力
-
-![説明を入力](${sImage2} "fig02")
-
-#### 登録
 `;
 
 const source12: string =`
 
-#### （管理者ユーザーのみ、操作可能）
+## 下記操作により、ユーザー同士つながることができます。
+### （管理者ユーザーのみ、操作可能）
 
 ![番号をコピーペースト](${sImage4} "fig04")
 

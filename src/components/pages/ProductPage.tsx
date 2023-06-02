@@ -70,7 +70,7 @@ export const ProductComponent = (page: Prop) => {
                                   {lib.action.map((act, l) => {
                                     // source?: ...
                                     //  ! is non-null assertion operator.
-                                    // Otherwise callSource method can't return to be undefined possibly.
+                                    // Otherwise callSource method can't return, undefined possibly.
                                     // const caller = callSource(act.source)!;
                                     const caller = callSource(act.source);
                                     return (
@@ -89,6 +89,7 @@ export const ProductComponent = (page: Prop) => {
                                                 <SyntaxHighlighter
                                                   children={String(children).replace(/\n$/, "")}
                                                   language={match[1]}
+                                                  PreTag="section"
                                                   {...props}
                                                 />
                                               ) : (
