@@ -171,6 +171,7 @@ const Skill = () => {
             WordPress（PHP）
           </dt>
           <dd>オリジナルテーマを開発した経験があります。</dd>
+          <dd>Zenn.devに<a href="https://zenn.dev/gensuke_spp/articles/2f6aad01c07240">記事</a>を書きました。</dd>
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
@@ -191,7 +192,6 @@ const Skill = () => {
             Docker
           </dt>
           <dd>基礎的なDockerfile、docker-composeを用いた仮想環境を構築することができます。</dd>
-          <dd>Zenn.devに<a href="https://zenn.dev/gensuke_spp/articles/2f6aad01c07240">記事</a>を書きました。</dd>
         </dl>
         <dl className={`${boundaryTop} ${responsive}`}>
           <dt
