@@ -26,6 +26,8 @@ export const introduction = {
   }),
   catalyst: style({
     fontSize: '0.9rem',
+    width: '45vw',
+    margin: '0 auto',
   })
 };
 

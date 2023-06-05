@@ -106,8 +106,12 @@ const source5: string =`
 - YuenBiao: projectA3
 で、ログインできます。
 
+&nbsp;
+
 Jackyは、SammoHung、YuenBiaoとつながってますので、2人の画像を閲覧することができます。
 SammoHung、YuenBiaoはJackyの画像を見ることができます。
+
+&nbsp;
 
 #### アップロードする画像を選択
 

@@ -1,7 +1,7 @@
 import { boundaryY } from '../sprinkles.boundary.css';
 import { introduction } from '../TopPage.css';
 
-import topImage from '../image/portfolio_top.jpg';
+import topImage from '../../image/portfolio_top.jpg';
 
 export const TopImageComp = () => {
   return (
