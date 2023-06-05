@@ -26,6 +26,7 @@ export const introduction = {
   }),
   catalyst: style({
     fontSize: '0.9rem',
+    width: '45vw',
   })
 };
 
@@ -92,7 +93,8 @@ export const footer = {
     fontWeight: 'bold'
   }),
   wrap: style({
-    backgroundColor: 'burlywood'
+    backgroundColor: 'burlywood',
+    width: '100%',
   }),
   copyright: style({
     color: 'white',
