@@ -190,6 +190,8 @@ application = webapp2.WSGIApplication([
 
 const source8: string =`
 
+[Github]("https://github.com/gensukeSpp/xue.hr3a-portfolio/")から、ソースコードをご確認ください。
+
 ~~~javascript
 const [products, setProducts] = React.useState<Product[]>([]);
 
