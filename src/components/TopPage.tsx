@@ -31,13 +31,13 @@ const HeaderMenu = () => {
     // </ul>
     <div className={menuItem.wrap}>
       <ScrollLink to="intro" smooth={true} duration={500} className={menuItem.link}>
-        プロフィール
+        Profile
       </ScrollLink>
       <ScrollLink to="skill" smooth={true} duration={500} className={menuItem.link}>
         Skill
       </ScrollLink>
       <details style={{cursor: "pointer"}}>
-        <summary style={{listStyleType: "none"}}>作品紹介</summary>
+        <summary style={{listStyleType: "none"}}>Works</summary>
         <ul>
           <li>
             <Link route={productPageBuilder.route} match={{"page": "0"}} className={menuItem.link}>作品１</Link>
