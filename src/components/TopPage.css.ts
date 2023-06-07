@@ -11,13 +11,17 @@ export const menuItem = {
     // https://teratail.com/questions/193795より、
     // しっかり横幅を持つ
     position: 'fixed',
-    width: '76vw',
-  }), 
+    width: '100%',
+  }),
   link: style({
-		textDecoration: 'initial',
+    textDecoration: 'initial',
     fontWeight: 'bold',
-  })
-}
+  }),
+};
+export const rootWrap = style({
+  width: '76vw',
+  margin: '0 auto',
+});
 
 export const introduction = {
   photo: style({
@@ -28,7 +32,7 @@ export const introduction = {
     fontSize: '0.9rem',
     width: '45vw',
     margin: '0 auto',
-  })
+  }),
 };
 
 // const themeVars = createGlobalTheme("", {
@@ -63,7 +67,7 @@ export const skill = {
   h4skill: style({
     fontSize: '2rem',
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
   }),
   wrap: style({
     display: 'flex',
@@ -80,8 +84,8 @@ export const skill = {
     // textDecorationColor: "yellow",
     textUnderlineOffset: '-0.25rem',
     textDecorationSkipInk: 'none',
-    textAlign: 'center'
-  })
+    textAlign: 'center',
+  }),
   // link: style({
   //   color: 'blue',
   //   textDecoration: 'underline'
@@ -89,17 +93,20 @@ export const skill = {
 };
 
 export const footer = {
+  contactWrap: style({
+    paddingLeft: '10%',
+  }),
   h4contact: style({
     fontSize: '1.7rem',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   }),
-  wrap: style({
+  beltWrap: style({
     backgroundColor: 'burlywood',
   }),
   copyright: style({
     color: 'white',
     fontSize: '0.75rem',
     lineHeight: '4',
-    textAlign: 'center'
-  })
-}
+    textAlign: 'center',
+  }),
+};

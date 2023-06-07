@@ -11,68 +11,72 @@ export const menuLink = {
     // https://teratail.com/questions/193795より、
     // しっかり横幅を持つ
     position: 'fixed',
-    width: '76vw',
+    width: '100%',
   }),
-	link: style({
-		color: 'gray',
-		textDecoration: 'initial',
-		fontSize: '0.9rem',
+  link: style({
+    color: 'gray',
+    textDecoration: 'initial',
+    fontSize: '0.9rem',
     fontWeight: 'bold',
-	}),
-	photo: style({
-		objectFit: 'cover',
-		aspectRatio: '16/9',
-	})
-}
+  }),
+};
+
+export const pageWrap = style({
+  width: '76vw',
+  margin: '0 auto',
+});
+
+export const topPhoto = style({
+  objectFit: 'cover',
+  aspectRatio: '16/9',
+});
 
 export const item = {
-	title: style({
-		fontSize: '1.35rem'
-	})
-}
+  title: style({
+    fontSize: '1.35rem',
+  }),
+};
 
 export const language = {
-	name: style({
-		fontSize: '1.2rem'
-	})
-}
+  name: style({
+    fontSize: '1.2rem',
+  }),
+};
 
 export const library = {
-	name: style({
-		fontWeight: 'bold',
-		paddingLeft: '3%',
-		"::before" : {
-			content: '',
-			backgroundColor: 'lightpink',
-			opacity: '0.8',
-			width: '1%',
-			height: '8vh',
-			marginRight: '3%',
-			display: 'inline-block',
-			verticalAlign: 'middle'
-		},
-	}),
-	description: style({
-		paddingLeft: '3%',
-		"::before" : {
-			content: '',
-			backgroundColor: 'aquamarine',
-			opacity: '0.8',
-			width: '1%',
-			height: '8vh',
-			marginRight: '3%',
-			display: 'inline-block',
-			verticalAlign: 'middle'
-		},
-	})
-}
+  name: style({
+    fontWeight: 'bold',
+    '::before': {
+      content: '',
+      backgroundColor: 'lightpink',
+      opacity: '0.8',
+      width: '1%',
+      height: '8vh',
+      marginRight: '3%',
+      display: 'inline-block',
+      verticalAlign: 'middle',
+    },
+  }),
+  description: style({
+    '::before': {
+      content: '',
+      backgroundColor: 'aquamarine',
+      opacity: '0.8',
+      width: '1%',
+      height: '8vh',
+      marginRight: '3%',
+      display: 'inline-block',
+      verticalAlign: 'middle',
+    },
+  }),
+};
 
 export const action = {
-	summary: style({
-		display: 'inline-block',
-		borderBottom: 'double'
-	}),
-	source: style({
-		fontSize: '0.9rem'
-	})
-}
+  summary: style({
+    display: 'inline-block',
+    borderBottom: 'double',
+  }),
+  source: style({
+    fontSize: '0.9rem',
+  }),
+};

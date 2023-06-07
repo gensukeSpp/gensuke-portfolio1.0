@@ -7,7 +7,7 @@ import sImage5 from '../../image/imgshare05.png';
 import sImage6 from '../../image/sunkit01.png';
 import sImage7 from '../../image/sunkit02.png';
 
-const source1: string =`
+const source1 = `
 
 ~~~php
 <html>
@@ -21,7 +21,7 @@ const source1: string =`
 ~~~
 `;
 
-const source2: string =`
+const source2 = `
 
 ~~~php
 phpファイル
@@ -37,7 +37,7 @@ tplファイル
 ~~~
 `;
 
-const source3: string =`
+const source3 = `
 
 ~~~javascript
 自作sendDataプラグインの利用
@@ -62,7 +62,7 @@ $エレメントタグ.on("click", function(){
 ~~~
 `;
 
-const source4: string = `
+const source4 = `
 
 ~~~javascript
 /*
@@ -88,7 +88,7 @@ $モーダルウィンドウにしたい画像エレメント.on("click", functi
 	...
 `;
 
-const source11: string =`
+const source11 = `
 
 ![症状をチェック](${sImage6} "fig06")
 
@@ -99,15 +99,22 @@ const source11: string =`
 
 `;
 
-const source5: string =`
+const source5 = `
 
-- SammoHung: projectA1
-- Jacky: projectA2
-- YuenBiao: projectA3
+| ユーザーID | パスワード |
+| :----: | :----: |
+| SammoHung | projectA1 |
+| Jackie | projectA2 |
+| YuenBiao | projectA3 |
+
 で、ログインできます。
 
-Jackyは、SammoHung、YuenBiaoとつながってますので、2人の画像を閲覧することができます。
-SammoHung、YuenBiaoはJackyの画像を見ることができます。
+&nbsp;
+
+Jackieは、SammoHung、YuenBiaoとつながってますので、2人の画像を閲覧することができます。
+SammoHung、YuenBiaoはJackieの画像を見ることができます。
+
+&nbsp;
 
 #### アップロードする画像を選択
 
@@ -117,8 +124,9 @@ SammoHung、YuenBiaoはJackyの画像を見ることができます。
 #### 説明を入力
 
 ![説明を入力](${sImage2} "fig02")
-
 #### 登録
+
+&nbsp;
 
 ~~~python
 class ImageBlob(ndb.Model):
@@ -137,9 +145,10 @@ target_article = ImageBlobオブジェクト.getting()
 ~~~
 `;
 
-const source12: string =`
+const source12 = `
 
-#### （管理者ユーザーのみ、操作可能）
+## 下記操作により、ユーザー同士つながることができます。
+### （管理者ユーザーのみ、操作可能）
 
 ![番号をコピーペースト](${sImage4} "fig04")
 
@@ -151,7 +160,7 @@ const source12: string =`
 ![つながったメンバーの画像が表示](${sImage5} "fig05")
 `;
 
-const source6: string =`
+const source6 = `
 
 [こちら](https://qiita.com/wasnot/items/029b94bc7ba9f189e8d4)に沿って、ある程度実装可能
 
@@ -171,7 +180,7 @@ def user_required(handler):
 ~~~
 `;
 
-const source7: string =`
+const source7 = `
 
 ~~~python
 application = webapp2.WSGIApplication([
@@ -187,7 +196,7 @@ application = webapp2.WSGIApplication([
 ~~~
 `;
 
-const source8: string =`
+const source8 = `
 
 [Github]("https://github.com/gensukeSpp/xue.hr3a-portfolio/")から、ソースコードをご確認ください。
 
@@ -217,7 +226,7 @@ return (
 ~~~
 `;
 
-const source9: string =`
+const source9 = `
 
 こちら https://www.copycat.dev/blog/react-markdown/ を参考
 
@@ -239,7 +248,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 ~~~
 `;
 
-const source10: string =`
+const source10 = `
 
 ~~~javascript
 // sprinkles.css.ts
@@ -272,35 +281,34 @@ const responsive: string = atoms({
 `;
 
 export const callSource = (no: string): string => {
-
-	switch (no){
-		case "1":
-			// return <ReactMarkdown children={source1} remarkPlugins={[remarkGfm]}></ReactMarkdown>;
-			return source1;
-		case "2":
-			return source2;
-		case "3":
-			return source3;
-		case "4":
-			return source4;
-		case "5":
-			return source5;
-		case "6":
-			return source6;
-		case "7":
-			return source7;
-		case "8":
-			return source8;
-		case "9":
-			return source9;
-		case "10":
-			return source10;
-		case "11":
-			return source11;
-		case "12":
-			return source12;
-		// 以下がなければ、Function lacks ending return statement and return type does not include 'undefined'.
-		default:
-			throw new Error("Nothing number");
-	}
-}
+  switch (no) {
+    case '1':
+      // return <ReactMarkdown children={source1} remarkPlugins={[remarkGfm]}></ReactMarkdown>;
+      return source1;
+    case '2':
+      return source2;
+    case '3':
+      return source3;
+    case '4':
+      return source4;
+    case '5':
+      return source5;
+    case '6':
+      return source6;
+    case '7':
+      return source7;
+    case '8':
+      return source8;
+    case '9':
+      return source9;
+    case '10':
+      return source10;
+    case '11':
+      return source11;
+    case '12':
+      return source12;
+    // 以下がなければ、Function lacks ending return statement and return type does not include 'undefined'.
+    default:
+      throw new Error('Nothing number');
+  }
+};

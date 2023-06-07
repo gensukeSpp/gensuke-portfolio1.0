@@ -6,16 +6,26 @@ globalStyle('html, body > #root', {
     'Droid Sans', sans-serif`,
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
-  width: '76vw',
 });
 
 globalStyle('a', {
   color: 'blue',
   textDecoration: 'underline',
-  cursor: 'pointer'
+  cursor: 'pointer',
 });
 
 globalStyle('li', {
   // listStyleType: 'disc',
-  listStylePosition: 'inside' 
+  listStylePosition: 'inside',
+});
+
+globalStyle('table', {
+  fontSize: '1rem',
+  width: '50%',
+});
+
+globalStyle('table thead', {
+  borderBottom: 'solid 1px',
+  backgroundColor: 'lightgray',
+  fontWeight: 'bold',
 });

@@ -1,4 +1,4 @@
-import { menuLink } from './ProductPage.css';
+import { menuLink, topPhoto } from './ProductPage.css';
 import { boundaryY } from '../sprinkles.boundary.css';
 import capture1 from '../../image/sunkit_top.png';
 import capture2 from '../../image/image-share_top.png';
@@ -15,18 +15,15 @@ const TopCaptureComponent = (prop: TopImageProp) -> no-correct
 */
 // therefore ↓
 // https://stackoverflow.com/questions/55075740/property-does-not-exist-on-type-intrinsicattributes
-//export const TopCaptureComponent = (prop: {imageKeyNumber: TopImageKey, title: string}) => {
-export const TopCaptureComponent = (prop: {pageCount: number, title: string}) => {
-
-	if(prop.pageCount < 2){
-		return (
-			<div className={boundaryY}>
-				<img src={captures[prop.pageCount]} alt={prop.title + "のスクリーンショット"} className={menuLink.photo} />
-			</div>
-		);
-	} else {
-		return (
-			<div></div>
-		);
-	}
-}
+// export const TopCaptureComponent = (prop: {imageKeyNumber: TopImageKey, title: string}) => {
+export const TopCaptureComponent = (prop: { pageCount: number; title: string }) => {
+  if (prop.pageCount < 2) {
+    return (
+      <div className={boundaryY}>
+        <img src={captures[prop.pageCount]} alt={prop.title + 'のスクリーンショット'} className={topPhoto} />
+      </div>
+    );
+  } else {
+    return <div></div>;
+  }
+};
