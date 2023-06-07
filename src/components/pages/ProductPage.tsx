@@ -86,7 +86,7 @@ export const ProductComponent = (page: Prop) => {
                                                 const match = /language-(\w+)/.exec(className || '');
                                                 return !inline && match ? (
                                                   <SyntaxHighlighter language={match[1]} {...props}>
-                                                    children={String(children).replace(/\n$/, '')}
+                                                    {String(children).replace(/\n$/, '')}
                                                   </SyntaxHighlighter>
                                                 ) : (
                                                   <code className={className} {...props}>
