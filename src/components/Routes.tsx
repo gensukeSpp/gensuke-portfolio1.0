@@ -2,7 +2,7 @@ import { Rocon, useRoutes } from 'rocon/react';
 
 // import { ProductComponent } from './pages/ProductPage';
 import { HomePageTemp } from './templates/HomePage';
-import Output from './organisms/product/OutputData';
+import Output from './organisms/work/OutputData';
 
 const topLevelRoutes = Rocon.Path()
   .exact({ action: () => <HomePageTemp /> })
