@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
 
-import { Library, Product } from './portfolio_type';
+import { Work } from './portfolio_type';
 import { boundaryY, boundaryTop } from '../sprinkles.boundary.css';
 import { action, item, language, library, pageWrap } from './ProductPage.css';
 
@@ -23,12 +23,12 @@ type Prop = {
   [pageNum: string]: number;
 };
 
-const fetchData: Promise<Product[]> = fetch(
+const fetchData: Promise<Work[]> = fetch(
   'https://my-json-server.typicode.com/gensukeSpp/sunkit-portfolio/products'
 ).then((res) => res.json());
 
 export const ProductComponent = (page: Prop) => {
-  const [products, setProducts] = React.useState<Product[]>([]);
+  const [products, setProducts] = React.useState<Work[]>([]);
 
   React.useEffect(() => {
     const f = async () => {
@@ -43,19 +43,19 @@ export const ProductComponent = (page: Prop) => {
 
   return (
     <>
-      {products.map((product: Product, i) => {
+      {products.map((work: Work, i) => {
         if (i === key)
           return (
             <div key={i}>
               <ProductPageMenu searchNumber={key} />
               <div className={pageWrap}>
                 {/* <img src={product.screen} alt={`${product.title}` + "のスクリーンショット"} /> */}
-                <TopCaptureComponent pageCount={key} title={product.title} />
+                <TopCaptureComponent pageCount={key} title={work.title} />
                 <dl className={boundaryY}>
-                  <dt className={item.title}>{product.title}</dt>
-                  <dd>制作・更新期間{product.term}</dd>
-                  <dd>{product.presentation}</dd>
-                  {product.language.map((lang, j) => {
+                  <dt className={item.title}>{work.title}</dt>
+                  <dd>制作・更新期間{work.term}</dd>
+                  <dd>{work.presentation}</dd>
+                  {work.language.map((lang, j) => {
                     return (
                       <div key={j}>
                         <dl className={boundaryTop}>
@@ -110,7 +110,7 @@ export const ProductComponent = (page: Prop) => {
                       </div>
                     );
                   })}
-                  <a href={`${product.link}`} target="_blank" rel="noopener noreferrer">
+                  <a href={`${work.link}`} target="_blank" rel="noopener noreferrer">
                     作品ページ
                   </a>
                 </dl>

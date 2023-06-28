@@ -1,36 +1,39 @@
-export interface Product {
-	title: string;
-	term: string;
-	presentation?: string;
-	language: Language[];
-	link?: string;
+export interface Work {
+  title: string;
+  term: string;
+  presentation?: string;
+  language: Language[];
+  link?: string;
 }
-  
+
 export interface Language {
-	program: string;
-	library: Library[];
+  program: string;
+  library: Library[];
 }
-    
+
 export interface Library {
-	name: string;
-	description?: string;
-	action: Action[];
+  name: string;
+  description?: string;
+  action: Action[];
 }
-  
+
 interface Action {
-	summary: string;
-	explanation: string;
-	source: string;
+  summary: string;
+  explanation: string;
+  source: string;
 }
-  
-// type Product = {
-//   title: string,
-//   term: string,
-//   description?: string
+
+// type Work = {
+//  title: string,
+//  term: string,
+// 	presentation?: string,
+// 	language: Language[],
+// 	link?: string,
 // }
 
-// type Language = Product & {
-//   program: string[]
+// type Language = Work & {
+// 	program: string,
+// 	library: Library[],
 // }
 
 // type Library = Language & {
@@ -40,6 +43,7 @@ interface Action {
 // }
 
 // type Action = {
-//   summary: string,
-//   description: string
+// 	summary: string,
+// 	explanation: string,
+// 	source: string,
 // }
